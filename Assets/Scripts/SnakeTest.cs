@@ -118,15 +118,11 @@ public class SnakeTest : MonoBehaviour {
         if (growTwo == true)
         {
             AddBodyPart();
-            AddBodyPart();
             growTwo = false;
         }
 
         if (growFive == true)
         {
-            AddBodyPart();
-            AddBodyPart();
-            AddBodyPart();
             AddBodyPart();
             AddBodyPart();
             growFive = false;
@@ -389,6 +385,314 @@ public class SnakeTest : MonoBehaviour {
                     SetScoreText();
                 }
                 //Destroy(bodyParts[1]);
+            }
+
+            if (bodyParts.Count >= 10)
+            {
+                if (bodyParts[9].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[9]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 11)
+            {
+                if (bodyParts[10].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[10]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 12)
+            {
+                if (bodyParts[11].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[11]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 13)
+            {
+                if (bodyParts[12].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[12]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 14)
+            {
+                if (bodyParts[13].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[13]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 15)
+            {
+                if (bodyParts[14].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[14]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 16)
+            {
+                if (bodyParts[15].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[15]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 17)
+            {
+                if (bodyParts[16].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[16]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 18)
+            {
+                if (bodyParts[17].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[17]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 19)
+            {
+                if (bodyParts[18].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[18]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 20)
+            {
+                if (bodyParts[19].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[19]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 21)
+            {
+                if (bodyParts[20].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[20]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 21)
+            {
+                if (bodyParts[20].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[20]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 22)
+            {
+                if (bodyParts[21].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[21]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 23)
+            {
+                if (bodyParts[22].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[22]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 24)
+            {
+                if (bodyParts[23].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[23]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 25)
+            {
+                if (bodyParts[24].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[24]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 26)
+            {
+                if (bodyParts[25].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[25]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 27)
+            {
+                if (bodyParts[26].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[26]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 28)
+            {
+                if (bodyParts[27].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[27]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 29)
+            {
+                if (bodyParts[28].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[28]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
+            }
+
+            if (bodyParts.Count >= 30)
+            {
+                if (bodyParts[29].tag == "Null")
+                {
+                    bodyParts.Remove(bodyParts[29]);
+                    if (points > 0)
+                    {
+                        points -= 1;
+                        SetScoreText();
+                    }
+                    //Destroy(bodyParts[1]);
+                }
             }
         }
     }
