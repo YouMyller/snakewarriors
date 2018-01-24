@@ -6,12 +6,13 @@ public class Randomizer : MonoBehaviour {
 
     public SnakeTest st;
     public SnakeTest other;
+    public GameObject P1;
+    public GameObject P2;
 
-    string[] powerupTable = {"Speed", "Swap", "Power3", "Power4" };
+    string[] powerupTable = {"Speed", "Swap", "Power3", "Power4"};
     string powerup = "none";
     int number;
-    Vector3 P1loc;
-    Vector3 P2loc;
+    Vector3 temp;
     public bool newpower = false;
     bool haspower = false;
     Random r = new Random();
@@ -58,10 +59,9 @@ public class Randomizer : MonoBehaviour {
         }
         else if (powerup == "Swap")
         {
-            P1loc = st.transform.position;
-            P2loc = other.transform.position;
-            st.transform.position = P2loc;
-            other.transform.position = P1loc;
+            temp = P1.transform.position;
+            P1.transform.position = P2.transform.position;
+            P2.transform.position = temp;
             powerup = "Null";
         }
 

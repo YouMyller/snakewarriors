@@ -293,6 +293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   st: {fileID: 101636236}
   other: {fileID: 1160029857}
+  P1: {fileID: 1178564239}
+  P2: {fileID: 775460913}
   newpower: 0
 --- !u!1 &129111538
 GameObject:
@@ -1281,6 +1283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   st: {fileID: 1160029857}
   other: {fileID: 101636236}
+  P1: {fileID: 1178564239}
+  P2: {fileID: 775460913}
   newpower: 0
 --- !u!4 &1160029856
 Transform:
