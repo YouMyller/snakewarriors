@@ -20,7 +20,7 @@ public class SceneManagement : MonoBehaviour {
     {
         if (name == "Start")
         {
-            SceneManager.LoadScene("ChoosePlayer");
+            SceneManager.LoadScene("RealChoosePlayer");
         }
 
         else if (name == "Credits")
@@ -38,14 +38,19 @@ public class SceneManagement : MonoBehaviour {
             SceneManager.LoadScene("Titles");
         }
 
-        else if (name == "lvl1")
+        else if (name == "2 players")
         {
-            SceneManager.LoadScene("level_1");
+            SceneManager.LoadScene("TwoPlayers");
         }
 
-        else if (name == "lvl2")
+        else if (name == "3 players")
         {
-            SceneManager.LoadScene("level_2");
+            SceneManager.LoadScene("ThreePlayers");
+        }
+
+        else if (name == "4 players")
+        {
+            SceneManager.LoadScene("FourPlayers");
         }
     }
 }
