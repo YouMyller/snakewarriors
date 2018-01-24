@@ -7,6 +7,9 @@ public class eatingFood : MonoBehaviour {
 
     public SnakeTest st;
 
+    public SnakeTest player1;
+    public SnakeTest player2;
+
     private bool slowed = false;
 
     public GameObject end1;
@@ -64,11 +67,11 @@ public class eatingFood : MonoBehaviour {
         }
         if (collision.gameObject.tag == "Finale")
         {
-            if (gameObject.tag == "P1")
+            if (player1.points > player2.points)
             {
                 end1.SetActive(true);
             }
-            if (gameObject.tag == "P2")
+            if (player2.points > player1.points)
             {
                 end2.SetActive(true);
             }
