@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class eatingFood : MonoBehaviour {
 
     public SnakeTest st;
+    public Randomizer random;
 
     public SnakeTest player1;
     public SnakeTest player2;
@@ -37,24 +38,10 @@ public class eatingFood : MonoBehaviour {
         {
             st.growFive = true;
         }
-        if (collision.gameObject.tag == "SpeedFruit")
+
+        if (collision.gameObject.tag == "Powerup")
         {
-            if (st.speed == st.normalValue)
-            {
-                st.speed = st.xtraSpeed;
-            }
-            else if (st.speed == st.xtraSpeed)
-            {
-                st.speed = st.xtraSpeed2;
-            }
-            else if (st.speed == st.xtraSpeed2)
-            {
-                st.speed = st.xtraSpeed3;
-            }
-            else if (st.speed == st.xtraSpeed3)
-            {
-                st.speed = st.xtraSpeed3;
-            }
+            random.newpower = true;
         }
     }
 
