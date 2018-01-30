@@ -1091,6 +1091,7 @@ GameObject:
   m_Component:
   - component: {fileID: 311367875}
   - component: {fileID: 311367874}
+  - component: {fileID: 311367876}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: P1
@@ -1142,6 +1143,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &311367876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 311367873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9148d9518be92f48a78f5d7ac53a643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  st: {fileID: 311367874}
+  other: {fileID: 1364863550}
+  P1: {fileID: 593938724}
+  P2: {fileID: 883997366}
+  timer: 0
+  newpower: 0
+  timerRunning: 0
+  badfood: 0
 --- !u!1 &318154993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,6 +2637,11 @@ Prefab:
       propertyPath: st
       value: 
       objectReference: {fileID: 311367874}
+    - target: {fileID: 114278669131483868, guid: 38a549f9066d8184e93e69d81179ad29,
+        type: 2}
+      propertyPath: random
+      value: 
+      objectReference: {fileID: 311367876}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38a549f9066d8184e93e69d81179ad29, type: 2}
   m_IsPrefabParent: 0
@@ -2970,6 +2995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   st: {fileID: 1364863550}
+  random: {fileID: 0}
   player1: {fileID: 0}
   player2: {fileID: 0}
   end1: {fileID: 0}
@@ -2987,6 +3013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 0}
   st: {fileID: 0}
+  bodyPartsNew: []
 --- !u!1 &760509455
 GameObject:
   m_ObjectHideFlags: 0
@@ -4567,6 +4594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 0}
   st: {fileID: 0}
+  bodyPartsNew: []
 --- !u!114 &1138212710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4579,6 +4607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   st: {fileID: 1364863550}
+  random: {fileID: 0}
   player1: {fileID: 0}
   player2: {fileID: 0}
   end1: {fileID: 0}
@@ -4661,6 +4690,11 @@ Prefab:
       propertyPath: st
       value: 
       objectReference: {fileID: 1364863550}
+    - target: {fileID: 114692625827754734, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
+        type: 2}
+      propertyPath: random
+      value: 
+      objectReference: {fileID: 1364863552}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb520c8ec1e30ff4d8c588e70067a5fa, type: 2}
   m_IsPrefabParent: 0
@@ -5784,6 +5818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1364863551}
   - component: {fileID: 1364863550}
+  - component: {fileID: 1364863552}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: P2
@@ -5835,6 +5870,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1364863552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1364863549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9148d9518be92f48a78f5d7ac53a643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  st: {fileID: 1364863550}
+  other: {fileID: 311367874}
+  P1: {fileID: 593938724}
+  P2: {fileID: 883997366}
+  timer: 0
+  newpower: 0
+  timerRunning: 0
+  badfood: 0
 --- !u!1 &1366084466
 GameObject:
   m_ObjectHideFlags: 0

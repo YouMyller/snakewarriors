@@ -6,24 +6,26 @@ public class HeadCollision : MonoBehaviour {
 
     public GameObject spawnPosition;
     public SnakeTest st;
-    public List<GameObject> bodyParts = new List<GameObject>();
+    public List<GameObject> bodyPartsNew = new List<GameObject>();
 
     // Use this for initialization
     void Start ()
     {
-        //bodyParts = st.bodyParts[];
-	}
+        bodyPartsNew = new List<GameObject>(st.bodyParts);
+    }
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+        bodyPartsNew = st.bodyParts;
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Wall")
         {
             transform.position = spawnPosition.transform.position;
+            bodyPartsNew[bodyPartsNew.Count - 1].tag = "Null";
             //
             //Debug.Log("Kamoon, kamoon beibi kamoon");
         }

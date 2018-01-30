@@ -20,6 +20,7 @@ public class myDeath : MonoBehaviour {
     public SnakeTest snakeTestp2;
 
     private bool eaten = false;
+    private bool kill = false;
 
     /*public Transform p1;
     public Transform p2;
@@ -60,13 +61,13 @@ public class myDeath : MonoBehaviour {
                     eaten = true;
                     snakeTestp1.SetScoreText();
                 }*/
-                if (transform.parent.tag == "P1")
+                if (transform.parent.tag == "P1" && kill == true)
                 {
                     snakeTestp2.AddBodyPart();
                     //snakeTestp2.points += 1;
                     snakeTestp2.SetScoreText();
                 }
-                if (transform.parent.tag == "P2")
+                if (transform.parent.tag == "P2" && kill == true)
                 {
                     snakeTestp1.AddBodyPart();
                     snakeTestp1.SetScoreText();
@@ -92,6 +93,7 @@ public class myDeath : MonoBehaviour {
             if (distanceP1 <= 1 && p1.tag == "P1")
             {
                 gameObject.tag = "Null";
+                kill = true;
                 //Debug.Log("Erikoiskosketus. (Ykkönen söi)");
             }
         }
@@ -101,6 +103,7 @@ public class myDeath : MonoBehaviour {
             if (distanceP2 <= 1 && p2.tag == "P2")
             {
                 gameObject.tag = "Null";
+                kill = true;
                 //Debug.Log("Erikoiskosketus. (Kakkonen söi)");
             }
         }
