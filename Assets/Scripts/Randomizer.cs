@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Randomizer : MonoBehaviour {
 
+    
+
     public SnakeTest st;
     public SnakeTest other;
     public GameObject P1;
     public GameObject P2;
 
-    string[] powerupTable = {"Speed", "Swap", "Stun", "Badfood"};
+    string[] powerupTable = {/*"Speed", "Swap", "Stun",*/ "Badfood"};
     string powerup = "none";
     int number;
     public float timer = 0;
@@ -87,6 +89,7 @@ public class Randomizer : MonoBehaviour {
         }
         else if(powerup == "Badfood")
         {
+            badfood = true;
             if (timerRunning == false)
             {
                 timer = 5;
@@ -98,7 +101,7 @@ public class Randomizer : MonoBehaviour {
                 if (timer < 0)
                 {
                     timerRunning = false;
-
+                    badfood = false;
                     powerup = ("null");
                 }
             }

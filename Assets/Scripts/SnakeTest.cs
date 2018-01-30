@@ -8,6 +8,8 @@ public class SnakeTest : MonoBehaviour {
 
     public List<GameObject> bodyParts = new List<GameObject>(); //public List<Transform> bodyParts = new List<Transform>();
 
+    public Randomizer random;
+
     public float minDistance = .25f;
     public float speed = 1;
     public float rotationSpeed = 50;
