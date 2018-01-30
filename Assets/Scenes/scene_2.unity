@@ -338,6 +338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 39987450}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &84733782
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +451,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 84733782}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!4 &87897954 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4002106775227302, guid: 54572522139e9d54da4101223619fc65,
@@ -1461,6 +1465,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 318154993}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &323698250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,6 +1764,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 403205473}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &409992116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,6 +2452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 542377703}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &557981833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,6 +2807,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 616646275}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &624757382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3721,6 +3733,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 836098791}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &846980788
 GameObject:
   m_ObjectHideFlags: 0
@@ -3916,6 +3930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 851462512}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1001 &853916889
 Prefab:
   m_ObjectHideFlags: 0
@@ -5006,6 +5022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1042143252}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1070613265
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,6 +5219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1111501796}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1138212708 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1831322701168790, guid: 362e0d0d2ce086840b310bfa9fbb9c16,
@@ -5421,6 +5441,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1160001367}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1165324225
 GameObject:
   m_ObjectHideFlags: 0
@@ -6545,6 +6567,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1363366931}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1364863549
 GameObject:
   m_ObjectHideFlags: 0
@@ -6938,6 +6962,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1411798928}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1001 &1427725059
 Prefab:
   m_ObjectHideFlags: 0
@@ -7313,6 +7339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1504442963}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1509672854
 GameObject:
   m_ObjectHideFlags: 0
@@ -7477,6 +7505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1561307305}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1565184295
 GameObject:
   m_ObjectHideFlags: 0
@@ -7979,6 +8009,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1637036839}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1001 &1641644152
 Prefab:
   m_ObjectHideFlags: 0
@@ -8323,6 +8355,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1650650722}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1651682110
 GameObject:
   m_ObjectHideFlags: 0
@@ -9071,6 +9105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1727155940}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1772317158
 GameObject:
   m_ObjectHideFlags: 0
@@ -9489,6 +9525,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1832571403}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1862945075
 GameObject:
   m_ObjectHideFlags: 0
@@ -9600,6 +9638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1862945075}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1893313936
 GameObject:
   m_ObjectHideFlags: 0
@@ -9711,6 +9751,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1893313936}
+  pelaaja1: {fileID: 0}
+  pelaaja2: {fileID: 0}
 --- !u!1 &1900065322
 GameObject:
   m_ObjectHideFlags: 0
