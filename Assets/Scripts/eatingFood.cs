@@ -16,6 +16,8 @@ public class eatingFood : MonoBehaviour {
     public GameObject end1;
     public GameObject end2;
 
+     
+
     // Use this for initialization
     void Start () {
 		
@@ -31,7 +33,16 @@ public class eatingFood : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Food"))
         {
-            st.growTwo = true;
+            if (random.badfood == false)
+            {
+                st.growTwo = true;
+                
+            }
+            else if (random.badfood == true)
+            {
+                //st.bodyParts[st.bodyParts.Count].tag;
+
+            }
         }
 
         if (collision.gameObject.CompareTag("SuperFood"))

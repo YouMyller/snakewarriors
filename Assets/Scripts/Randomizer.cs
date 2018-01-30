@@ -9,18 +9,20 @@ public class Randomizer : MonoBehaviour {
     public GameObject P1;
     public GameObject P2;
 
-    string[] powerupTable = {"Speed", "Swap", "Power3", "Power4"};
+    string[] powerupTable = {"Speed", "Swap", "Stun", "Badfood"};
     string powerup = "none";
     int number;
+    public float timer = 0;
     Vector3 temp;
     public bool newpower = false;
     bool haspower = false;
+    public bool timerRunning = false;
+    public bool badfood = false;
     Random r = new Random();
 
 	// Use this for initialization
 	void Start ()
     {
-        
         
 	}
 	
@@ -36,26 +38,25 @@ public class Randomizer : MonoBehaviour {
         }
         if (powerup == "Speed")
         {
-            if (st.speed == st.normalValue)
+            st.speed = 16;
+            if (timerRunning == false)
             {
-                st.speed = st.xtraSpeed;
-                powerup = "null";
+                timer = 5;
+                timerRunning = true;
             }
-            else if (st.speed == st.xtraSpeed)
+            else
             {
-                st.speed = st.xtraSpeed2;
-                powerup = "null";
+                timer -= Time.deltaTime;
+                if (timer < 0)
+                {
+                    st.speed = 8;
+                    timerRunning = false;
+                    powerup = ("null");
+                }
             }
-            else if (st.speed == st.xtraSpeed2)
-            {
-                st.speed = st.xtraSpeed3;
-                powerup = "null";
-            }
-            else if (st.speed == st.xtraSpeed3)
-            {
-                st.speed = st.xtraSpeed3;
-                powerup = "null";
-            }
+
+            
+            
         }
         else if (powerup == "Swap")
         {
@@ -63,6 +64,44 @@ public class Randomizer : MonoBehaviour {
             P1.transform.position = P2.transform.position;
             P2.transform.position = temp;
             powerup = "Null";
+        }
+
+        else if (powerup == "Stun")
+        {
+            other.speed = 0;
+            if (timerRunning == false)
+            {
+                timer = 3;
+                timerRunning = true;
+            }
+            else
+            {
+                timer -= Time.deltaTime;
+                if (timer < 0)
+                {
+                    timerRunning = false;
+                    other.speed = 8;
+                    powerup = ("null");
+                }
+            }
+        }
+        else if(powerup == "Badfood")
+        {
+            if (timerRunning == false)
+            {
+                timer = 5;
+                timerRunning = true;
+            }
+            else
+            {
+                timer -= Time.deltaTime;
+                if (timer < 0)
+                {
+                    timerRunning = false;
+
+                    powerup = ("null");
+                }
+            }
         }
 
     }
