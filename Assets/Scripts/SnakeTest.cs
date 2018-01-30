@@ -48,11 +48,11 @@ public class SnakeTest : MonoBehaviour {
         points = 0;
         SetScoreText();
 
+        /*AddBodyPart();
         AddBodyPart();
         AddBodyPart();
         AddBodyPart();
-        AddBodyPart();
-        AddBodyPart();
+        AddBodyPart();*/
 
         Rigidbody rb = new Rigidbody(); //The head's Rigidbody
 

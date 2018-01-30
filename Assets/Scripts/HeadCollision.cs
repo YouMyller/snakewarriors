@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeadCollision : MonoBehaviour {
 
     public GameObject spawnPosition;
+    public SnakeTest st;
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +29,18 @@ public class HeadCollision : MonoBehaviour {
         {
             if (collision.gameObject.transform.parent.tag == "P1" && gameObject.tag == "P2")
             {
+                //st.points += 1;
+                //st.SetScoreText();
+                //st.scoreText.text = "P1: " + st.points.ToString();
+                Debug.Log("P2 got poits");
                 collision.gameObject.tag = "Null";
             }
             if (collision.gameObject.transform.parent.tag == "P2" && gameObject.tag == "P1")
             {
+                //st.points += 1;
+                //st.SetScoreText();
+                //st.scoreText.text = "P2: " + st.points.ToString();
+                Debug.Log("P2 got poits");
                 collision.gameObject.tag = "Null";
             }
         }

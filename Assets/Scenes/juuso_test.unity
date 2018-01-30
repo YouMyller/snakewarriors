@@ -1114,7 +1114,7 @@ MonoBehaviour:
   minDistance: 2
   speed: 8
   rotationSpeed: 1
-  beginSize: 5
+  beginSize: 0
   bodyPrefab: {fileID: 1900065322}
   growTwo: 0
   growFive: 0
@@ -2612,6 +2612,11 @@ Prefab:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1364863550}
+    - target: {fileID: 114750592032396330, guid: 38a549f9066d8184e93e69d81179ad29,
+        type: 2}
+      propertyPath: st
+      value: 
+      objectReference: {fileID: 311367874}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38a549f9066d8184e93e69d81179ad29, type: 2}
   m_IsPrefabParent: 0
@@ -2981,6 +2986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 0}
+  st: {fileID: 0}
 --- !u!1 &760509455
 GameObject:
   m_ObjectHideFlags: 0
@@ -4560,6 +4566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 0}
+  st: {fileID: 0}
 --- !u!114 &1138212710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4647,6 +4654,11 @@ Prefab:
     - target: {fileID: 114692625827754734, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
         type: 2}
       propertyPath: player2
+      value: 
+      objectReference: {fileID: 1364863550}
+    - target: {fileID: 114915499358966374, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
+        type: 2}
+      propertyPath: st
       value: 
       objectReference: {fileID: 1364863550}
     m_RemovedComponents: []
@@ -5795,7 +5807,7 @@ MonoBehaviour:
   minDistance: 2
   speed: 8
   rotationSpeed: 1
-  beginSize: 5
+  beginSize: 0
   bodyPrefab: {fileID: 1900065322}
   growTwo: 0
   growFive: 0

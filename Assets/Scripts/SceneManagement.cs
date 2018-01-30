@@ -30,7 +30,7 @@ public class SceneManagement : MonoBehaviour {
 
         else if (name == "Exit")
         {
-            print("There is no escape!");
+            Application.Quit();
         }
 
         else if (name == "Back")

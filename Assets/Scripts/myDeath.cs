@@ -60,6 +60,17 @@ public class myDeath : MonoBehaviour {
                     eaten = true;
                     snakeTestp1.SetScoreText();
                 }*/
+                if (transform.parent.tag == "P1")
+                {
+                    snakeTestp2.AddBodyPart();
+                    //snakeTestp2.points += 1;
+                    snakeTestp2.SetScoreText();
+                }
+                if (transform.parent.tag == "P2")
+                {
+                    snakeTestp1.AddBodyPart();
+                    snakeTestp1.SetScoreText();
+                }
                 Destroy(gameObject);
             }
         }
