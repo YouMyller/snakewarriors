@@ -6,10 +6,12 @@ public class HeadCollision : MonoBehaviour {
 
     public GameObject spawnPosition;
     public SnakeTest st;
+    public List<GameObject> bodyParts = new List<GameObject>();
 
-	// Use this for initialization
-	void Start () {
-		
+    // Use this for initialization
+    void Start ()
+    {
+        //bodyParts = st.bodyParts[];
 	}
 	
 	// Update is called once per frame
@@ -22,6 +24,7 @@ public class HeadCollision : MonoBehaviour {
         if (collision.gameObject.tag == "Wall")
         {
             transform.position = spawnPosition.transform.position;
+            //
             //Debug.Log("Kamoon, kamoon beibi kamoon");
         }
 
