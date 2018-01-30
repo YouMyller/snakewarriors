@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class eatingFood : MonoBehaviour {
 
+    public List<GameObject> bodylist = new List<GameObject>();
+
     public SnakeTest st;
     public Randomizer random;
 
@@ -19,14 +21,15 @@ public class eatingFood : MonoBehaviour {
      
 
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start ()
+    {
+        bodylist = new List<GameObject>(st.bodyParts);
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-
+        bodylist = st.bodyParts;
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -36,18 +39,32 @@ public class eatingFood : MonoBehaviour {
             if (random.badfood == false)
             {
                 st.growTwo = true;
-                
             }
             else if (random.badfood == true)
             {
-                //st.bodyParts[st.bodyParts.Count].tag;
+                if (bodylist.Count > 1)
+                {
+                    bodylist[bodylist.Count - 1].tag = "Null";
 
+                }
             }
         }
 
         if (collision.gameObject.CompareTag("SuperFood"))
         {
-            st.growFive = true;
+            if (random.badfood == false)
+            {
+                st.growFive = true;
+            }
+            else if (random.badfood == true)
+            {
+                if (bodylist.Count > 2)
+                {
+                    bodylist[bodylist.Count - 1].tag = "Null";
+                    bodylist[bodylist.Count - 2].tag = "Null";
+
+                }
+            }
         }
 
         if (collision.gameObject.tag == "Powerup")
