@@ -9,7 +9,7 @@ public class Randomizer : MonoBehaviour {
     public GameObject P1;
     public GameObject P2;
 
-    string[] powerupTable = {"Speed", "Swap", "Stun", "Power4"};
+    string[] powerupTable = {"Speed", "Swap", "Stun", "Badfood"};
     string powerup = "none";
     int number;
     public float timer = 0;
@@ -17,6 +17,7 @@ public class Randomizer : MonoBehaviour {
     public bool newpower = false;
     bool haspower = false;
     public bool timerRunning = false;
+    public bool badfood = false;
     Random r = new Random();
 
 	// Use this for initialization
@@ -80,6 +81,24 @@ public class Randomizer : MonoBehaviour {
                 {
                     timerRunning = false;
                     other.speed = 8;
+                    powerup = ("null");
+                }
+            }
+        }
+        else if(powerup == "Badfood")
+        {
+            if (timerRunning == false)
+            {
+                timer = 5;
+                timerRunning = true;
+            }
+            else
+            {
+                timer -= Time.deltaTime;
+                if (timer < 0)
+                {
+                    timerRunning = false;
+
                     powerup = ("null");
                 }
             }
