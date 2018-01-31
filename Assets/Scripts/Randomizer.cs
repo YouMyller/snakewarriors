@@ -145,7 +145,7 @@ public class Randomizer : MonoBehaviour {
             reverse = true;
             if (timerRunning == false)
             {
-                timer = 500;
+                timer = 5;
                 timerRunning = true;
             }
             else
