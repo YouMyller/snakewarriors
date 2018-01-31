@@ -5,30 +5,74 @@ using UnityEngine;
 public class RandomPlacer : MonoBehaviour {
 
     public GameObject wall;
-    public SnakeTest pelaaja1;
-    public SnakeTest pelaaja2;
+    public Vector3 radius;
+    public Collider[] colliders;
 
 
     // Use this for initialization
     void Start ()
     {
-        wall.transform.localScale = new Vector3(Random.Range(5, 25), 2, Random.Range(5, 25));
-        wall.transform.position = new Vector3(Random.Range(-43, 45), -32, Random.Range(-30, 120));
-        
+        Vector3 spawnPos = new Vector3(0,0,0);
+        bool canSpawnHere = false;
+        int safetyNet = 0;
 
-        //while (wall.transform.position = new Vector3(Range(20,25), RangeInt(20, 25), RangeInt(20, 25)))
+        wall.transform.localScale = new Vector3(Random.Range(3, 25), 2, Random.Range(3, 25));
+
+
+        while (!canSpawnHere)
         {
-            wall.transform.position = new Vector3(Random.Range(-43, 45), -32, Random.Range(-30, 120));
+            float spawnPosX = Random.Range(-43.5f, 45.5f);
+            float spawnPosY = Random.Range(-30.5f, 120.5f);
+
+            spawnPos = new Vector3(spawnPosX, 0, spawnPosY);
+            canSpawnHere = preventSpawnOverlap(spawnPos);
+
+            safetyNet++;
+            if (safetyNet > 50)
+            {
+                Debug.Log("Too many attempts");
+                break;
+            }
 
         }
+        GameObject seina = Instantiate(wall, spawnPos, Quaternion.identity) as GameObject;
+
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-
-
+        
+            
 }
 
+    bool preventSpawnOverlap(Vector3 spawnPos)
+    {
+        colliders = Physics.OverlapBox(transform.position, radius);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            Vector3 centerPoint = colliders[i].bounds.center;
+            float width = colliders[i].bounds.extents.x;
+            float height = colliders[i].bounds.extents.z;
+
+            float leftextent = centerPoint.x - width;
+            float rightextent = centerPoint.x + width;
+            float upperextent = centerPoint.y + height;
+            float lowerextent = centerPoint.y + height;
+
+            if (spawnPos.x >= leftextent && spawnPos.x <= rightextent)
+            {
+                if (spawnPos.y >= lowerextent && spawnPos.y <= upperextent)
+                {
+                    return false;
+                }
+
+            }
+            
+        }
+        return true;
+
+    }
+    
 
 }
