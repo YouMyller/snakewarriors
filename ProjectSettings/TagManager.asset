@@ -20,6 +20,7 @@ TagManager:
   - Grass
   - Normal
   - Powerup
+  - Hidden
   layers:
   - Default
   - TransparentFX

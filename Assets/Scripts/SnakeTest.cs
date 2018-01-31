@@ -144,47 +144,80 @@ public class SnakeTest : MonoBehaviour {
 
         if (gameObject.tag == "P1")
         {
-            if (Input.GetKey(KeyCode.W) && move != 2)
+            if (Input.GetKey(KeyCode.W) && move != 2 && random.reverse == false)
             {
                 move = 0;
             }
-
-            else if (Input.GetKey(KeyCode.D) && move != 3)
-            {
-                move = 1;
-            }
-
-            else if (Input.GetKey(KeyCode.S) && move != 0)
+            else if (Input.GetKey(KeyCode.W) && move != 0 && random.reverse == true)
             {
                 move = 2;
             }
 
-            else if (Input.GetKey(KeyCode.A) && move != 1)
+            else if (Input.GetKey(KeyCode.D) && move != 3 && random.reverse == false)
+            {
+                move = 1;
+            }
+            else if (Input.GetKey(KeyCode.D) && move != 1 && random.reverse == true)
             {
                 move = 3;
             }
+
+            else if (Input.GetKey(KeyCode.S) && move != 0 && random.reverse == false)
+            {
+                move = 2;
+            }
+            else if (Input.GetKey(KeyCode.S) && move != 2 && random.reverse == true)
+            {
+                move = 0;
+            }
+
+            else if (Input.GetKey(KeyCode.A) && move != 1 && random.reverse == false)
+            {
+                move = 3;
+            }
+            else if (Input.GetKey(KeyCode.A) && move != 3 && random.reverse == true)
+            {
+                move = 1;
+            }
+
         }
 
         if (gameObject.tag == "P2")
         {
-            if (Input.GetKey(KeyCode.UpArrow) && move != 2)
+            if (Input.GetKey(KeyCode.UpArrow) && move != 2 && random.reverse == false)
             {
                 move = 0;
             }
-
-            else if (Input.GetKey(KeyCode.RightArrow) && move != 3)
-            {
-                move = 1;
-            }
-
-            else if (Input.GetKey(KeyCode.DownArrow) && move != 0)
+            else if (Input.GetKey(KeyCode.UpArrow) && move != 0 && random.reverse == true)
             {
                 move = 2;
             }
 
-            else if (Input.GetKey(KeyCode.LeftArrow) && move != 1)
+            else if (Input.GetKey(KeyCode.RightArrow) && move != 3 && random.reverse == false)
+            {
+                move = 1;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow) && move != 1 && random.reverse == true)
             {
                 move = 3;
+            }
+
+            else if (Input.GetKey(KeyCode.DownArrow) && move != 0 && random.reverse == false)
+            {
+                move = 2;
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) && move != 2 && random.reverse == true)
+            {
+                move = 0;
+            }
+
+            else if (Input.GetKey(KeyCode.LeftArrow) && move != 1 && random.reverse == false)
+            {
+                move = 3;
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow) && move != 3 && random.reverse == true)
+            {
+                move = 1;
             }
         }
 
