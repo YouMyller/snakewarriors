@@ -19,6 +19,7 @@ TagManager:
   - Finale
   - Grass
   - Normal
+  - Powerup
   layers:
   - Default
   - TransparentFX
