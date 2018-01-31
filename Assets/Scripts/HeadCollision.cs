@@ -5,15 +5,17 @@ using UnityEngine;
 public class HeadCollision : MonoBehaviour {
 
     public GameObject spawnPosition;
-<<<<<<< HEAD
     private int colorOne;
     private int colorTwo;
     private bool timeToColor;
     public HeadCollision playerOneHead;
     private float time;
 
-	// Use this for initialization
-	void Start ()
+    public SnakeTest st;
+    public List<GameObject> bodyPartsNew = new List<GameObject>();
+
+    // Use this for initialization
+    void Start()
     {
         timeToColor = true;
 
@@ -42,21 +44,11 @@ public class HeadCollision : MonoBehaviour {
                 gameObject.GetComponent<Renderer>().material.color = pink;
             }
         }
-=======
-    public SnakeTest st;
-    public List<GameObject> bodyPartsNew = new List<GameObject>();
-
-    // Use this for initialization
-    void Start ()
-    {
-        bodyPartsNew = new List<GameObject>(st.bodyParts);
->>>>>>> c23e222c47b14dd1918404c02f1de7d2c27e7f2c
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-<<<<<<< HEAD
         TimeToColor();
     }
 
@@ -140,9 +132,7 @@ public class HeadCollision : MonoBehaviour {
                 }
             }
         }
-=======
         bodyPartsNew = st.bodyParts;
->>>>>>> c23e222c47b14dd1918404c02f1de7d2c27e7f2c
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -150,12 +140,10 @@ public class HeadCollision : MonoBehaviour {
         if (collision.gameObject.tag == "Wall")
         {
             transform.position = spawnPosition.transform.position;
-<<<<<<< HEAD
-=======
+
             bodyPartsNew[bodyPartsNew.Count - 1].tag = "Null";
             //
             //Debug.Log("Kamoon, kamoon beibi kamoon");
->>>>>>> c23e222c47b14dd1918404c02f1de7d2c27e7f2c
         }
 
         /*if (collision.gameObject.tag == "BodyPart")

@@ -61,11 +61,9 @@ public class myDeath : MonoBehaviour {
                     eaten = true;
                     snakeTestp1.SetScoreText();
                 }*/
-<<<<<<< HEAD
 
                 //Ennen kuin objekti kuolee / kun koskettaa päätä, antaa päälle muistiin oman materiaalin värinsä. Seuraava objekti, jonka pää luo, on tämän värinen.
 
-=======
                 if (transform.parent.tag == "P1" && kill == true)
                 {
                     snakeTestp2.AddBodyPart();
@@ -77,8 +75,7 @@ public class myDeath : MonoBehaviour {
                     snakeTestp1.AddBodyPart();
                     snakeTestp1.SetScoreText();
                 }
->>>>>>> c23e222c47b14dd1918404c02f1de7d2c27e7f2c
-                Destroy(gameObject);
+               Destroy(gameObject);
             }
         }
 	}

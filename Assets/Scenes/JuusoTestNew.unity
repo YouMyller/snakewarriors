@@ -1112,10 +1112,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyParts:
   - {fileID: 593938724}
+  random: {fileID: 311367876}
   minDistance: 2
   speed: 8
   rotationSpeed: 1
-  beginSize: 0
+  beginSize: 5
   bodyPrefab: {fileID: 1900065322}
   growTwo: 0
   growFive: 0
@@ -2638,7 +2639,21 @@ Prefab:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1364863550}
-<<<<<<< HEAD
+    - target: {fileID: 114750592032396330, guid: 38a549f9066d8184e93e69d81179ad29,
+        type: 2}
+      propertyPath: playerOneHead
+      value: 
+      objectReference: {fileID: 593938725}
+    - target: {fileID: 114750592032396330, guid: 38a549f9066d8184e93e69d81179ad29,
+        type: 2}
+      propertyPath: st
+      value: 
+      objectReference: {fileID: 311367874}
+    - target: {fileID: 114278669131483868, guid: 38a549f9066d8184e93e69d81179ad29,
+        type: 2}
+      propertyPath: random
+      value: 
+      objectReference: {fileID: 311367876}
     - target: {fileID: 212602877989413460, guid: 38a549f9066d8184e93e69d81179ad29,
         type: 2}
       propertyPath: m_Color.r
@@ -2654,23 +2669,6 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114750592032396330, guid: 38a549f9066d8184e93e69d81179ad29,
-        type: 2}
-      propertyPath: playerOneHead
-      value: 
-      objectReference: {fileID: 593938725}
-=======
-    - target: {fileID: 114750592032396330, guid: 38a549f9066d8184e93e69d81179ad29,
-        type: 2}
-      propertyPath: st
-      value: 
-      objectReference: {fileID: 311367874}
-    - target: {fileID: 114278669131483868, guid: 38a549f9066d8184e93e69d81179ad29,
-        type: 2}
-      propertyPath: random
-      value: 
-      objectReference: {fileID: 311367876}
->>>>>>> c23e222c47b14dd1918404c02f1de7d2c27e7f2c
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38a549f9066d8184e93e69d81179ad29, type: 2}
   m_IsPrefabParent: 0
@@ -3023,6 +3021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d50985cf5c3370448f34f3012a57a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodylist: []
   st: {fileID: 1364863550}
   random: {fileID: 0}
   player1: {fileID: 0}
@@ -3041,12 +3040,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 0}
-<<<<<<< HEAD
   playerOneHead: {fileID: 0}
-=======
   st: {fileID: 0}
   bodyPartsNew: []
->>>>>>> c23e222c47b14dd1918404c02f1de7d2c27e7f2c
 --- !u!1 &760509455
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,12 +4622,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 0}
-<<<<<<< HEAD
   playerOneHead: {fileID: 0}
-=======
   st: {fileID: 0}
   bodyPartsNew: []
->>>>>>> c23e222c47b14dd1918404c02f1de7d2c27e7f2c
 --- !u!114 &1138212710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4643,6 +4636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d50985cf5c3370448f34f3012a57a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodylist: []
   st: {fileID: 1364863550}
   random: {fileID: 0}
   player1: {fileID: 0}
@@ -4722,7 +4716,21 @@ Prefab:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1364863550}
-<<<<<<< HEAD
+    - target: {fileID: 114915499358966374, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
+        type: 2}
+      propertyPath: playerOneHead
+      value: 
+      objectReference: {fileID: 593938725}
+    - target: {fileID: 114915499358966374, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
+        type: 2}
+      propertyPath: st
+      value: 
+      objectReference: {fileID: 1364863550}
+    - target: {fileID: 114692625827754734, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
+        type: 2}
+      propertyPath: random
+      value: 
+      objectReference: {fileID: 1364863552}
     - target: {fileID: 212338603583617466, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
         type: 2}
       propertyPath: m_Color.r
@@ -4738,28 +4746,6 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114915499358966374, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
-        type: 2}
-      propertyPath: playerOneHead
-      value: 
-      objectReference: {fileID: 593938725}
-    - target: {fileID: 212338603583617466, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-=======
-    - target: {fileID: 114915499358966374, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
-        type: 2}
-      propertyPath: st
-      value: 
-      objectReference: {fileID: 1364863550}
-    - target: {fileID: 114692625827754734, guid: cb520c8ec1e30ff4d8c588e70067a5fa,
-        type: 2}
-      propertyPath: random
-      value: 
-      objectReference: {fileID: 1364863552}
->>>>>>> c23e222c47b14dd1918404c02f1de7d2c27e7f2c
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb520c8ec1e30ff4d8c588e70067a5fa, type: 2}
   m_IsPrefabParent: 0
@@ -5904,10 +5890,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyParts:
   - {fileID: 883997366}
+  random: {fileID: 1364863552}
   minDistance: 2
   speed: 8
   rotationSpeed: 1
-  beginSize: 0
+  beginSize: 5
   bodyPrefab: {fileID: 1900065322}
   growTwo: 0
   growFive: 0
