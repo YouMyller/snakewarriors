@@ -18,8 +18,6 @@ public class eatingFood : MonoBehaviour {
     public GameObject end1;
     public GameObject end2;
 
-     
-
     // Use this for initialization
     void Start ()
     {
@@ -45,7 +43,6 @@ public class eatingFood : MonoBehaviour {
                 if (bodylist.Count > 1)
                 {
                     bodylist[bodylist.Count - 1].tag = "Null";
-
                 }
             }
         }

@@ -22,14 +22,24 @@ public class myDeath : MonoBehaviour {
     private bool eaten = false;
     private bool kill = false;
 
+    private Color myColor;
+
     /*public Transform p1;
     public Transform p2;
     public Transform thisBodyPart;*/
 
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start ()
+    {
+        if (transform.parent.tag == "P1")
+        {
+            myColor = snakeTestp1.newColor;
+        }
+        if (transform.parent.tag == "P2")
+        {
+            myColor = snakeTestp2.newColor;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -69,11 +79,13 @@ public class myDeath : MonoBehaviour {
                     snakeTestp2.AddBodyPart();
                     //snakeTestp2.points += 1;
                     snakeTestp2.SetScoreText();
+                    snakeTestp2.newColor = myColor;
                 }
                 if (transform.parent.tag == "P2" && kill == true)
                 {
                     snakeTestp1.AddBodyPart();
                     snakeTestp1.SetScoreText();
+                    snakeTestp1.newColor = myColor;
                 }
                Destroy(gameObject);
             }
@@ -95,6 +107,8 @@ public class myDeath : MonoBehaviour {
         {
             if (distanceP1 <= 1 && p1.tag == "P1")
             {
+                //myColor = gameObject.GetComponent<Renderer>().material.color;
+                //Debug.Log("Player 2: " + myColor);
                 gameObject.tag = "Null";
                 kill = true;
                 //Debug.Log("Erikoiskosketus. (Ykkönen söi)");
@@ -105,6 +119,8 @@ public class myDeath : MonoBehaviour {
         {
             if (distanceP2 <= 1 && p2.tag == "P2")
             {
+                //myColor = gameObject.GetComponent<Renderer>().material.color;
+                //Debug.Log("Player 1: " + myColor);
                 gameObject.tag = "Null";
                 kill = true;
                 //Debug.Log("Erikoiskosketus. (Kakkonen söi)");

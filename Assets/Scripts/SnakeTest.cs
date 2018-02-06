@@ -22,7 +22,7 @@ public class SnakeTest : MonoBehaviour {
     private Transform prevBodyPart;
     private Transform curBodyPart;
 
-    private int dir;
+    public int dir;
 
     public bool growTwo = false;
     public bool growFive = false;
@@ -43,6 +43,8 @@ public class SnakeTest : MonoBehaviour {
     public float normalValue;
 
     public float noSrslyFuku = 0;
+
+    public Color newColor;
 
     // Use this for initialization
     void Start ()
@@ -284,6 +286,11 @@ public class SnakeTest : MonoBehaviour {
 
         newPart.transform.SetParent(transform);
         //newPart.SetParent(transform);
+
+        Color partColor = newPart.GetComponent<Renderer>().material.color;
+        partColor = newColor; 
+
+        Debug.Log(newColor);
 
         bodyParts.Add(newPart);
 
