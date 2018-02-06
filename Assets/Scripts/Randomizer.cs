@@ -7,11 +7,12 @@ public class Randomizer : MonoBehaviour {
     public List<GameObject> bodylist = new List<GameObject>();
 
     public SnakeTest st;
-    public SnakeTest other;
-    public GameObject P1;
-    public GameObject P2;
+    public SnakeTest otherst;
+    public GameObject ThisHead;
+    public GameObject OtherHead;
+    public GameObject Mine;
 
-    string[] powerupTable = {/*"Speed", "Swap", "Stun", "Badfood", "Shield",*/ "Reverse"};
+    string[] powerupTable = {/*"Speed", "Swap", "Stun", "Badfood", "Shield", "Reverse",*/ "Mine"};
     string powerup = "none";
     int number;
     public float timer = 0;
@@ -66,15 +67,22 @@ public class Randomizer : MonoBehaviour {
         }
         else if (powerup == "Swap")
         {
-            temp = P1.transform.position;
-            P1.transform.position = P2.transform.position;
-            P2.transform.position = temp;
+            temp = ThisHead.transform.position;
+            ThisHead.transform.position = OtherHead.transform.position;
+            print(temp);
+            OtherHead.transform.position = temp;
+            powerup = "Null";
+        }
+
+        else if (powerup == "Mine")
+        {
+            Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.right*3, ThisHead.transform.rotation);
             powerup = "Null";
         }
 
         else if (powerup == "Stun")
         {
-            other.speed = 0;
+            otherst.speed = 0;
             if (timerRunning == false)
             {
                 timer = 3;
@@ -86,7 +94,7 @@ public class Randomizer : MonoBehaviour {
                 if (timer < 0)
                 {
                     timerRunning = false;
-                    other.speed = 8;
+                    otherst.speed = 8;
                     powerup = ("null");
                 }
             }
