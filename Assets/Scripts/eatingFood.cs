@@ -47,6 +47,25 @@ public class eatingFood : MonoBehaviour {
             }
         }
 
+        if (collision.gameObject.CompareTag("Mine"))
+        {
+            if (bodylist.Count == 2)
+            {
+                bodylist[bodylist.Count - 1].tag = "Null";
+            }
+            else if (bodylist.Count == 3)
+            {
+                bodylist[bodylist.Count - 1].tag = "Null";
+                bodylist[bodylist.Count - 2].tag = "Null";
+            }
+            else if (bodylist.Count > 3)
+            {
+                bodylist[bodylist.Count - 1].tag = "Null";
+                bodylist[bodylist.Count - 2].tag = "Null";
+                bodylist[bodylist.Count - 3].tag = "Null";
+            }
+        }
+
         if (collision.gameObject.CompareTag("SuperFood"))
         {
             if (random.badfood == false)
@@ -66,7 +85,10 @@ public class eatingFood : MonoBehaviour {
 
         if (collision.gameObject.tag == "Powerup")
         {
-            random.newpower = true;
+            if (random.powerup == "Null")
+            {
+                random.newpower = true;
+            }
         }
     }
 

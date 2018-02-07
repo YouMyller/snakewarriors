@@ -21,6 +21,7 @@ TagManager:
   - Normal
   - Powerup
   - Hidden
+  - Mine
   layers:
   - Default
   - TransparentFX

@@ -181,6 +181,10 @@ public class SnakeTest : MonoBehaviour {
             {
                 move = 1;
             }
+            else if (Input.GetKey(KeyCode.G))
+            {
+                random.UsePower();
+            }
 
         }
 
@@ -220,6 +224,10 @@ public class SnakeTest : MonoBehaviour {
             else if (Input.GetKey(KeyCode.LeftArrow) && move != 3 && random.reverse == true)
             {
                 move = 1;
+            }
+            else if (Input.GetKey(KeyCode.Keypad0))
+            {
+                random.UsePower();
             }
         }
 

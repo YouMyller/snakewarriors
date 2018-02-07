@@ -5,11 +5,13 @@ using UnityEngine;
 public class Eaten : MonoBehaviour {
 
     private SnakeTest st;
+    public Randomizer random;
 
 	// Use this for initialization
 	void Start ()
     {
-        st = GetComponent<SnakeTest>();	
+        st = GetComponent<SnakeTest>();
+
 	}
 	
 	// Update is called once per frame
