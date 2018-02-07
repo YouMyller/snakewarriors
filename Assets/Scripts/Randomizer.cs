@@ -12,13 +12,14 @@ public class Randomizer : MonoBehaviour {
     public GameObject OtherHead;
     public GameObject Mine;
 
-    string[] powerupTable = {/*"Speed", "Swap", "Stun", "Badfood", "Shield", "Reverse",*/ "Mine"};
-    string powerup = "none";
+    string[] powerupTable = {"Speed", "Swap", "Stun", "Badfood", "Shield", "Reverse", "Mine"};
+    public string powerup;
     int number;
     public float timer = 0;
     Vector3 temp;
     public bool newpower = false;
     bool haspower = false;
+    bool shielding = false;
     public bool timerRunning = false;
     public bool badfood = false;
     public bool reverse = false;
@@ -29,6 +30,7 @@ public class Randomizer : MonoBehaviour {
 	void Start ()
     {
         bodylist = new List<GameObject>(st.bodyParts);
+        powerup = "Null";
     }
 	
 	// Update is called once per frame
@@ -43,27 +45,48 @@ public class Randomizer : MonoBehaviour {
             print(powerup);
             newpower = false;
         }
+
+        if (shielding == true)
+        {
+            for (int i = bodylist.Count - 1; i > 0; i--)
+            {
+                GameObject shielded = bodylist[i];
+                shielded.GetComponent<myDeath>().enabled = false;
+                bodylist[i].gameObject.GetComponent<Renderer>().material.color = Color.cyan;
+            }
+        }
+        else
+        {
+            for (int i = bodylist.Count - 1; i > 0; i--)
+            {
+                GameObject shielded = bodylist[i];
+                shielded.GetComponent<myDeath>().enabled = true;
+                bodylist[i].gameObject.GetComponent<Renderer>().material.color = Color.white;
+            }
+        }
+        if (timerRunning == true)
+        {
+            timer -= Time.deltaTime;
+            if (timer < 0)
+            {
+                timerRunning = false;
+                reverse = false;
+                badfood = false;
+                powerup = ("Null");
+                shielding = false;
+                st.speed = 8;
+                otherst.speed = 8;
+            }
+        }
+
+    }
+    public void UsePower()
+    {
         if (powerup == "Speed")
         {
             st.speed = 16;
-            if (timerRunning == false)
-            {
-                timer = 5;
-                timerRunning = true;
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-                if (timer < 0)
-                {
-                    st.speed = 8;
-                    timerRunning = false;
-                    powerup = ("null");
-                }
-            }
-
-
-
+            timer = 5;
+            timerRunning = true;
         }
         else if (powerup == "Swap")
         {
@@ -76,96 +99,34 @@ public class Randomizer : MonoBehaviour {
 
         else if (powerup == "Mine")
         {
-            Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.right*3, ThisHead.transform.rotation);
+            Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.right * 2, ThisHead.transform.rotation);
             powerup = "Null";
         }
 
         else if (powerup == "Stun")
         {
             otherst.speed = 0;
-            if (timerRunning == false)
-            {
-                timer = 3;
-                timerRunning = true;
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-                if (timer < 0)
-                {
-                    timerRunning = false;
-                    otherst.speed = 8;
-                    powerup = ("null");
-                }
-            }
+            timer = 3;
+            timerRunning = true;
         }
         else if (powerup == "Badfood")
         {
             badfood = true;
-            if (timerRunning == false)
-            {
-                timer = 5;
-                timerRunning = true;
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-                if (timer < 0)
-                {
-                    timerRunning = false;
-                    badfood = false;
-                    powerup = ("null");
-                }
-            }
+            timer = 5;
+            timerRunning = true;
         }
         else if (powerup == "Shield")
         {
-            for (int i = bodylist.Count - 1; i > 0; i--)
-            {
-                GameObject shielded = bodylist[i];
-                shielded.GetComponent<myDeath>().enabled = false;
-                bodylist[i].gameObject.GetComponent<Renderer>().material.color = Color.cyan;
-            }
-            if (timerRunning == false)
-            {
-
-                timer = 5;
-                timerRunning = true;
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-                if (timer < 0)
-                {
-                    timerRunning = false;
-                    for (int i = bodylist.Count - 1; i > 0; i--)
-                    {
-                        GameObject shielded = bodylist[i];
-                        shielded.GetComponent<myDeath>().enabled = true;
-                        bodylist[i].gameObject.GetComponent<Renderer>().material.color = Color.white;
-                    }
-                    powerup = ("null");
-                }
-            }
+            shielding = true;
+            timer = 5;
+            timerRunning = true;
         }
         else if (powerup == "Reverse")
         {
             reverse = true;
-            if (timerRunning == false)
-            {
-                timer = 5;
-                timerRunning = true;
-            }
-            else
-            {
-                timer -= Time.deltaTime;
-                if (timer < 0)
-                {
-                    timerRunning = false;
-                    reverse = false;
-                    powerup = ("null");
-                }
-            }
+            timer = 5;
+            timerRunning = true;
         }
     }
+
 }
