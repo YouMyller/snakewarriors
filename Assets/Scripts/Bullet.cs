@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    public float speed = 10;
+    public float speed = 20;
     public float destTime = 2;
 
     public Rigidbody rb;
@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("BodyPart") || collision.gameObject.CompareTag("Null") || collision.gameObject.CompareTag("Head"))
         {
+            print("thonk");
             Destroy(gameObject);
         }
     }

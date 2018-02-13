@@ -26,6 +26,7 @@ public class SnakeTest : MonoBehaviour {
 
     public bool growTwo = false;
     public bool growFive = false;
+    public bool stunned = false;
 
     public int points;
 
@@ -33,7 +34,7 @@ public class SnakeTest : MonoBehaviour {
 
     public Rigidbody rb;
 
-    private int move = 0;
+    public int move = 0;
 
     public float creationTimer = 1f;
 
@@ -131,6 +132,10 @@ public class SnakeTest : MonoBehaviour {
             AddBodyPart();
             growFive = false;
         }
+        if (stunned == true)
+        {
+            speed = 0;
+        }
     }
 
     public void Movement()
@@ -181,7 +186,9 @@ public class SnakeTest : MonoBehaviour {
             {
                 move = 1;
             }
-            else if (Input.GetKey(KeyCode.G))
+
+
+            if (Input.GetKey(KeyCode.G))
             {
                 random.UsePower();
             }
@@ -225,7 +232,9 @@ public class SnakeTest : MonoBehaviour {
             {
                 move = 1;
             }
-            else if (Input.GetKey(KeyCode.Keypad0))
+
+
+            if (Input.GetKey(KeyCode.Keypad0))
             {
                 random.UsePower();
             }
@@ -746,4 +755,5 @@ public class SnakeTest : MonoBehaviour {
             }
         }
     }
+    
 }
