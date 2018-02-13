@@ -11,8 +11,9 @@ public class Randomizer : MonoBehaviour {
     public GameObject ThisHead;
     public GameObject OtherHead;
     public GameObject Mine;
+    public GameObject Bullet;
 
-    string[] powerupTable = {"Speed", "Swap", "Stun", "Badfood", "Shield", "Reverse", "Mine"};
+    string[] powerupTable = {/*"Speed", "Swap", "Stun", "Badfood", "Shield", "Reverse", "Mine",*/ "Gun"};
     public string powerup;
     int number;
     public float timer = 0;
@@ -75,6 +76,7 @@ public class Randomizer : MonoBehaviour {
                 powerup = ("Null");
                 shielding = false;
                 st.speed = 8;
+                otherst.stunned = false;
                 otherst.speed = 8;
             }
         }
@@ -99,13 +101,28 @@ public class Randomizer : MonoBehaviour {
 
         else if (powerup == "Mine")
         {
-            Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.right * 2, ThisHead.transform.rotation);
+            if (st.move == 0)
+            {
+                Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.up * 2, ThisHead.transform.rotation);
+            }
+            else if (st.move == 1)
+            {
+                Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.right * 2, ThisHead.transform.rotation);
+            }
+            else if (st.move == 2)
+            {
+                Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.up * 2, ThisHead.transform.rotation);
+            }
+            else
+            {
+                Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.right * 2, ThisHead.transform.rotation);
+            }
             powerup = "Null";
         }
 
         else if (powerup == "Stun")
         {
-            otherst.speed = 0;
+            otherst.stunned = true;
             timer = 3;
             timerRunning = true;
         }
@@ -126,6 +143,37 @@ public class Randomizer : MonoBehaviour {
             reverse = true;
             timer = 5;
             timerRunning = true;
+        }
+        else if (powerup == "Gun")
+        {
+            var luoti = new GameObject();
+            if (st.move == 0)
+            {
+                luoti = Instantiate(Bullet, ThisHead.transform.position + ThisHead.transform.up * 2, Quaternion.Euler(90, 0, 0));
+                luoti.SetActive(true);
+            }
+            else if (st.move == 1)
+            {
+                luoti = Instantiate(Bullet, ThisHead.transform.position + ThisHead.transform.right * 2, Quaternion.Euler(90, 0, -90));
+                luoti.SetActive(true);
+            } 
+            else if (st.move == 2)
+            {
+                luoti = Instantiate(Bullet, ThisHead.transform.position - ThisHead.transform.up * 2, Quaternion.Euler(90, 0, 180));
+                luoti.SetActive(true);
+            }
+            else
+            {
+                luoti = Instantiate(Bullet, ThisHead.transform.position - ThisHead.transform.right * 2, Quaternion.Euler(90, 0, 90));
+                luoti.SetActive(true);
+            }
+            
+            
+            if (luoti.transform.position == otherst.transform.position)
+            {
+                print("hitti");
+            }
+            powerup = "Null";
         }
     }
 
