@@ -137,11 +137,14 @@ public class HeadCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Wall" )
         {
             transform.position = spawnPosition.transform.position;
-
-            bodyPartsNew[bodyPartsNew.Count - 1].tag = "Null";
+            if (bodyPartsNew.Count !=1)
+            {
+                bodyPartsNew[bodyPartsNew.Count - 1].tag = "Null";
+            }
+            
             //
             //Debug.Log("Kamoon, kamoon beibi kamoon");
         }

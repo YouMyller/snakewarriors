@@ -289,6 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 311367876}
 --- !u!212 &113347652
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -902,7 +903,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 311367873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.26, y: 0.5, z: 0}
+  m_LocalPosition: {x: -18.26, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 593938726}
@@ -927,6 +928,7 @@ MonoBehaviour:
   ThisHead: {fileID: 593938724}
   OtherHead: {fileID: 883997366}
   Mine: {fileID: 0}
+  powerup: 
   timer: 0
   newpower: 0
   timerRunning: 0
@@ -1002,6 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 311367876}
 --- !u!212 &323698255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1165,7 +1168,7 @@ MonoBehaviour:
   spawnPoint2: {fileID: 755548270}
   radius: {x: 0, y: 0, z: 0}
   colliders: []
-  wallAmount: 10
+  wallAmount: 30
   foodAmount: 30
 --- !u!1001 &417100339
 Prefab:
@@ -1180,7 +1183,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4491284333870082, guid: 362e0d0d2ce086840b310bfa9fbb9c16, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -31.3
+      value: -31
       objectReference: {fileID: 0}
     - target: {fileID: 4491284333870082, guid: 362e0d0d2ce086840b310bfa9fbb9c16, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1599,6 +1602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 311367876}
 --- !u!212 &592999096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2671,6 +2675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 311367876}
 --- !u!212 &1003083739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3119,7 +3124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4491284333870082, guid: 362e0d0d2ce086840b310bfa9fbb9c16, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -31.3
+      value: -31
       objectReference: {fileID: 0}
     - target: {fileID: 4491284333870082, guid: 362e0d0d2ce086840b310bfa9fbb9c16, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3646,7 +3651,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1364863549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.71, y: 0.5, z: 0}
+  m_LocalPosition: {x: 18.71, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 883997371}
@@ -3671,6 +3676,7 @@ MonoBehaviour:
   ThisHead: {fileID: 883997366}
   OtherHead: {fileID: 593938724}
   Mine: {fileID: 0}
+  powerup: 
   timer: 0
   newpower: 0
   timerRunning: 0
@@ -3886,6 +3892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 311367876}
 --- !u!212 &1471982413
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4283,6 +4290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 311367876}
 --- !u!212 &1651682114
 SpriteRenderer:
   m_ObjectHideFlags: 0

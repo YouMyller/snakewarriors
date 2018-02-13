@@ -16,10 +16,9 @@ public class RandomPlacer : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        spawnPoint.transform.position = new Vector3(Random.Range(-43,45),-31, Random.Range(-30,120));
-        spawnPoint2.transform.position = new Vector3(Random.Range(-43, 45), -31, Random.Range(-30, 120));
         createWalls();
         createFood();
+        playerSpawn();
     }
 	
 	// Update is called once per frame
@@ -28,6 +27,7 @@ public class RandomPlacer : MonoBehaviour {
         
             
 }
+
     void createWalls()
     {
         for (int i = 0; i < wallAmount; i++)
@@ -72,21 +72,38 @@ public class RandomPlacer : MonoBehaviour {
             GameObject ruoka = Instantiate(food, spawnPos, Quaternion.AngleAxis(90, Vector3.left)) as GameObject;
         }
     }
+    void playerSpawn()
+    {
+        Vector3 spawnPos = new Vector3(0, -31, 0);
+        bool canSpawnHere = false;
 
-    
+
+        while (!canSpawnHere)
+        {
+
+            float spawnPosX = Random.Range(-43.5f, 45.5f);
+            float spawnPosY = Random.Range(-30.5f, 120.5f);
+            spawnPos = new Vector3(spawnPosX, -31, spawnPosY);
+            canSpawnHere = preventSpawnOverlap(spawnPos);
+        }
+        spawnPoint.transform.position = spawnPos;
+        spawnPoint2.transform.position = spawnPos;
+
+    }
+
     bool preventSpawnOverlap(Vector3 spawnPos)
     {
         colliders = Physics.OverlapBox(transform.position, radius);
         for (int i = 0; i < colliders.Length; i++)
         {
             Vector3 centerPoint = colliders[i].bounds.center;
-            float width = colliders[i].bounds.extents.x;
-            float height = colliders[i].bounds.extents.z;
+            float width = colliders[i].bounds.extents.x +15;
+            float height = colliders[i].bounds.extents.z +5;
 
             float leftextent = centerPoint.x - width;
             float rightextent = centerPoint.x + width;
             float upperextent = centerPoint.y + height;
-            float lowerextent = centerPoint.y + height;
+            float lowerextent = centerPoint.y - height;
 
             if (spawnPos.x >= leftextent && spawnPos.x <= rightextent)
             {
