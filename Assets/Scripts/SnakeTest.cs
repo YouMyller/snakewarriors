@@ -19,6 +19,10 @@ public class SnakeTest : MonoBehaviour {
     public GameObject bodyPrefab;
 
     private float dist;
+
+    private bool sprinting = false;
+    private float energy = 3;
+
     private Transform prevBodyPart;
     private Transform curBodyPart;
 
@@ -138,6 +142,33 @@ public class SnakeTest : MonoBehaviour {
         }
     }
 
+    void Update()
+    {
+        if (stunned == false)
+        {
+            speed = 8;
+            if (sprinting == false)
+            {
+                if (energy < 3)
+                {
+                    energy += Time.deltaTime;
+                }
+            }
+            if (sprinting == true)
+            {
+                if (energy > 0)
+                {
+                    energy -= Time.deltaTime;
+                    speed = 12;
+                }
+                else
+                {
+                    sprinting = false;
+                }
+            }
+        }
+    }
+
     public void Movement()
     {
         float curSpeed = speed;
@@ -193,6 +224,15 @@ public class SnakeTest : MonoBehaviour {
                 random.UsePower();
             }
 
+            if (Input.GetKey(KeyCode.Space))
+            {
+                sprinting = true;
+            }
+            else
+            {
+                sprinting = false;
+            }
+
         }
 
         if (gameObject.tag == "P2")
@@ -237,6 +277,16 @@ public class SnakeTest : MonoBehaviour {
             if (Input.GetKey(KeyCode.Keypad0))
             {
                 random.UsePower();
+            }
+            
+            
+            if (Input.GetKey(KeyCode.Keypad1))
+            {
+                sprinting = true;
+            }
+            else
+            {
+                sprinting = false;
             }
         }
 

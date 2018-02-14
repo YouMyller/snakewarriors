@@ -75,9 +75,7 @@ public class Randomizer : MonoBehaviour {
                 badfood = false;
                 powerup = ("Null");
                 shielding = false;
-                st.speed = 8;
                 otherst.stunned = false;
-                otherst.speed = 8;
             }
         }
 
@@ -103,19 +101,19 @@ public class Randomizer : MonoBehaviour {
         {
             if (st.move == 2)
             {
-                Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.up * 2, ThisHead.transform.rotation);
+                Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.up * bodylist.Count*1.3f, ThisHead.transform.rotation);
             }
             else if (st.move == 3)
             {
-                Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.right * 2, ThisHead.transform.rotation);
+                Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.right * bodylist.Count *1.3f, ThisHead.transform.rotation);
             }
             else if (st.move == 0)
             {
-                Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.up * 2, ThisHead.transform.rotation);
+                Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.up * bodylist.Count *1.3f, ThisHead.transform.rotation);
             }
             else
             {
-                Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.right * 2, ThisHead.transform.rotation);
+                Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.right * bodylist.Count* 1.3f , ThisHead.transform.rotation);
             }
             powerup = "Null";
         }
