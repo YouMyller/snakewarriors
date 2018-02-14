@@ -47,7 +47,7 @@ public class RandomPlacer : MonoBehaviour {
 
             }
 
-            GameObject seina = Instantiate(wall, spawnPos, Quaternion.identity) as GameObject;
+                GameObject seina = Instantiate(wall, spawnPos, Quaternion.identity) as GameObject;
         }
     }
 
@@ -93,30 +93,35 @@ public class RandomPlacer : MonoBehaviour {
 
     bool preventSpawnOverlap(Vector3 spawnPos)
     {
-        colliders = Physics.OverlapBox(transform.position, radius);
+        
+        radius = wall.transform.localScale;
+        colliders = Physics.OverlapBox(wall.transform.position, radius);
         for (int i = 0; i < colliders.Length; i++)
         {
             Vector3 centerPoint = colliders[i].bounds.center;
-            float width = colliders[i].bounds.extents.x +15;
-            float height = colliders[i].bounds.extents.z +5;
+            float width = colliders[i].bounds.extents.x +10;
+            float height = colliders[i].bounds.extents.z;
 
             float leftextent = centerPoint.x - width;
             float rightextent = centerPoint.x + width;
-            float upperextent = centerPoint.y + height;
-            float lowerextent = centerPoint.y - height;
+            float upperextent = centerPoint.z + height;
+            float lowerextent = centerPoint.z - height;
 
-            if (spawnPos.x >= leftextent && spawnPos.x <= rightextent)
+            if (spawnPos.x > leftextent && spawnPos.x < rightextent)
             {
-                if (spawnPos.y >= lowerextent && spawnPos.y <= upperextent)
+                if (spawnPos.z > lowerextent && spawnPos.z < upperextent)
                 {
+
                     return false;
                 }
 
             }
-            
-        }
-        return true;
 
+
+        }
+
+        return true;
+        
     }
     
 
