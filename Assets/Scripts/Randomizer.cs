@@ -13,7 +13,7 @@ public class Randomizer : MonoBehaviour {
     public GameObject Mine;
     public GameObject Bullet;
 
-    string[] powerupTable = {/*"Speed", "Swap", "Stun", "Badfood", "Shield", "Reverse", "Mine",*/ "Gun"};
+    string[] powerupTable = {"Speed", "Swap", "Stun", "Badfood", "Shield", "Reverse", "Mine", "Gun"};
     public string powerup;
     int number;
     public float timer = 0;
@@ -75,9 +75,7 @@ public class Randomizer : MonoBehaviour {
                 badfood = false;
                 powerup = ("Null");
                 shielding = false;
-                st.speed = 8;
                 otherst.stunned = false;
-                otherst.speed = 8;
             }
         }
 
@@ -101,21 +99,21 @@ public class Randomizer : MonoBehaviour {
 
         else if (powerup == "Mine")
         {
-            if (st.move == 0)
+            if (st.move == 2)
             {
-                Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.up * 2, ThisHead.transform.rotation);
+                Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.up * bodylist.Count*1.3f, ThisHead.transform.rotation);
             }
-            else if (st.move == 1)
+            else if (st.move == 3)
             {
-                Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.right * 2, ThisHead.transform.rotation);
+                Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.right * bodylist.Count *1.3f, ThisHead.transform.rotation);
             }
-            else if (st.move == 2)
+            else if (st.move == 0)
             {
-                Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.up * 2, ThisHead.transform.rotation);
+                Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.up * bodylist.Count *1.3f, ThisHead.transform.rotation);
             }
             else
             {
-                Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.right * 2, ThisHead.transform.rotation);
+                Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.right * bodylist.Count* 1.3f , ThisHead.transform.rotation);
             }
             powerup = "Null";
         }
@@ -169,10 +167,6 @@ public class Randomizer : MonoBehaviour {
             }
             
             
-            if (luoti.transform.position == otherst.transform.position)
-            {
-                print("hitti");
-            }
             powerup = "Null";
         }
     }
