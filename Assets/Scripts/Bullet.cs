@@ -32,10 +32,14 @@ public class Bullet : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("BodyPart") || collision.gameObject.CompareTag("Null") || collision.gameObject.CompareTag("Head"))
+        if (collision.gameObject.CompareTag("BodyPart"))
         {
-            print("thonk");
             Destroy(gameObject);
         }
+        if (collision.gameObject.tag == "Food" || collision.gameObject.tag == "SuperFood" || collision.gameObject.tag == "Powerup")
+        {
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+        }
+
     }
 }

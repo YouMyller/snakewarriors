@@ -92,6 +92,7 @@ public class myDeath : MonoBehaviour {
         }
 	}
 
+
     public void Distance()
     {
         distanceP1 = Vector3.Distance(p1.transform.position, thisBodyPart.transform.position);
@@ -101,6 +102,17 @@ public class myDeath : MonoBehaviour {
         if (testBoolean == true)
         {
             Debug.Log(distanceP2);
+        }
+
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        foreach (GameObject target in bullets)
+        {
+            float distanceB = Vector3.Distance(target.transform.position, transform.position);
+            if(distanceB < 1)
+            {
+                gameObject.tag = "Null";
+                kill = true;
+            }
         }
 
         if (transform.parent.tag == "P2")
