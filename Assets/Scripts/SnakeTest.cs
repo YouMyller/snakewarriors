@@ -17,6 +17,7 @@ public class SnakeTest : MonoBehaviour {
     public int beginSize;
 
     public GameObject bodyPrefab;
+    public Slider staminaBar;
 
     private float dist;
 
@@ -144,7 +145,9 @@ public class SnakeTest : MonoBehaviour {
 
     void Update()
     {
-        if (stunned == false)
+        staminaBar.value = energy;
+
+        if (stunned == false && random.powerup != "Speed")
         {
             speed = 8;
             if (sprinting == false)
