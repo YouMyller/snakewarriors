@@ -485,6 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &103381999
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -596,6 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &113347652
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -707,6 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &113915631
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1111,22 +1114,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyParts:
   - {fileID: 593938724}
+  random: {fileID: 0}
   minDistance: 2
   speed: 8
   rotationSpeed: 1
   beginSize: 5
   bodyPrefab: {fileID: 1900065322}
+  dir: 0
   growTwo: 0
   growFive: 0
+  stunned: 0
   points: 0
   scoreText: {fileID: 1664016864}
   rb: {fileID: 593938727}
+  move: 0
   creationTimer: 1
   xtraSpeed: 16
   xtraSpeed2: 20
   xtraSpeed3: 24
   normalValue: 0
   noSrslyFuku: 0
+  newColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &311367875
 Transform:
   m_ObjectHideFlags: 0
@@ -1310,6 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &323698255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1695,6 +1704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &419315193
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1869,6 +1879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &522492866
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2213,6 +2224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &592999096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2685,6 +2697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &642063071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2783,6 +2796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &643251055
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2907,6 +2921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &694278100
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2964,7 +2979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d50985cf5c3370448f34f3012a57a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodylist: []
   st: {fileID: 1364863550}
+  random: {fileID: 0}
   player1: {fileID: 0}
   player2: {fileID: 0}
   end1: {fileID: 0}
@@ -2981,6 +2998,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 0}
+  playerOneHead: {fileID: 0}
+  st: {fileID: 0}
+  bodyPartsNew: []
 --- !u!1 &760509455
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,6 +3140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &765328790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3551,6 +3572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &940853268
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3662,6 +3684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &946000941
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4071,6 +4094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1002613042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4182,6 +4206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1003083739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4293,6 +4318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1014639467
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4560,6 +4586,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 0}
+  playerOneHead: {fileID: 0}
+  st: {fileID: 0}
+  bodyPartsNew: []
 --- !u!114 &1138212710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4571,7 +4600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d50985cf5c3370448f34f3012a57a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bodylist: []
   st: {fileID: 1364863550}
+  random: {fileID: 0}
   player1: {fileID: 0}
   player2: {fileID: 0}
   end1: {fileID: 0}
@@ -4807,6 +4838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1165324229
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5055,6 +5087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!54 &1216062904
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5127,6 +5160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1258206083
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5792,22 +5826,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyParts:
   - {fileID: 883997366}
+  random: {fileID: 0}
   minDistance: 2
   speed: 8
   rotationSpeed: 1
   beginSize: 5
   bodyPrefab: {fileID: 1900065322}
+  dir: 0
   growTwo: 0
   growFive: 0
+  stunned: 0
   points: 0
   scoreText: {fileID: 1434806183}
   rb: {fileID: 883997367}
+  move: 0
   creationTimer: 1
   xtraSpeed: 12
   xtraSpeed2: 16
   xtraSpeed3: 20
   normalValue: 0
   noSrslyFuku: 0
+  newColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1364863551
 Transform:
   m_ObjectHideFlags: 0
@@ -5880,6 +5919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1366084470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6004,6 +6044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1403822844
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6353,6 +6394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1471982413
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6710,6 +6752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1565184299
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6821,6 +6864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1588914679
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6990,6 +7034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1628698146
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7334,6 +7379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1644566312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7530,6 +7576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1651682114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8056,6 +8103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1720209191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8461,6 +8509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1808807324
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9007,6 +9056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1908533540
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9118,6 +9168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1974604091
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9229,6 +9280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b1a35af7819041ad61e6891f048af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  random: {fileID: 0}
 --- !u!212 &1975084847
 SpriteRenderer:
   m_ObjectHideFlags: 0

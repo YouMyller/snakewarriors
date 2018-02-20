@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Randomizer : MonoBehaviour {
 
@@ -12,6 +13,8 @@ public class Randomizer : MonoBehaviour {
     public GameObject OtherHead;
     public GameObject Mine;
     public GameObject Bullet;
+    public Image[] powerupList;
+    
 
     string[] powerupTable = {"Speed", "Swap", "Stun", "Badfood", "Shield", "Reverse", "Mine", "Gun"};
     public string powerup;
@@ -32,6 +35,10 @@ public class Randomizer : MonoBehaviour {
     {
         bodylist = new List<GameObject>(st.bodyParts);
         powerup = "Null";
+        ResetImages();
+        powerupList[8].enabled = true;
+
+        
     }
 	
 	// Update is called once per frame
@@ -43,6 +50,7 @@ public class Randomizer : MonoBehaviour {
         {
             number = Random.Range(0, powerupTable.Length);
             powerup = powerupTable[number];
+            powerupList[number].enabled = true;
             print(powerup);
             newpower = false;
         }
@@ -74,6 +82,8 @@ public class Randomizer : MonoBehaviour {
                 reverse = false;
                 badfood = false;
                 powerup = ("Null");
+                ResetImages();
+                powerupList[8].enabled = true;
                 shielding = false;
                 otherst.stunned = false;
             }
@@ -95,6 +105,8 @@ public class Randomizer : MonoBehaviour {
             print(temp);
             OtherHead.transform.position = temp;
             powerup = "Null";
+            ResetImages();
+            powerupList[8].enabled = true;
         }
 
         else if (powerup == "Mine")
@@ -116,6 +128,8 @@ public class Randomizer : MonoBehaviour {
                 Instantiate(Mine, ThisHead.transform.position - ThisHead.transform.right * bodylist.Count* 1.3f , ThisHead.transform.rotation);
             }
             powerup = "Null";
+            ResetImages();
+            powerupList[8].enabled = true;
         }
 
         else if (powerup == "Stun")
@@ -165,9 +179,18 @@ public class Randomizer : MonoBehaviour {
                 luoti = Instantiate(Bullet, ThisHead.transform.position - ThisHead.transform.right * 2, Quaternion.Euler(90, 0, 90));
                 luoti.SetActive(true);
             }
-            
-            
+
+            ResetImages();
+            powerupList[8].enabled = true;
             powerup = "Null";
+        }
+    }
+    void ResetImages()
+    {
+        for (int i = powerupList.Length-1; i >= 0; i--)
+        {
+            powerupList[i].enabled = false;
+            print(powerupList[i]);
         }
     }
 
