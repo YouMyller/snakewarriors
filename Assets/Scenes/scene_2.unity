@@ -186,7 +186,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5766706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -31.69, z: 25.2}
+  m_LocalPosition: {x: 0.6, y: -40, z: 25.2}
   m_LocalScale: {x: 3.8787107, y: 1, z: 11.80876}
   m_Children: []
   m_Father: {fileID: 0}
@@ -422,7 +422,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 128297265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36, y: -31.69, z: 25.2}
+  m_LocalPosition: {x: -36, y: -40, z: 25.2}
   m_LocalScale: {x: 3.8787107, y: 1, z: 11.80876}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1169,10 +1169,8 @@ MonoBehaviour:
   food: {fileID: 1651682110}
   spawnPoint: {fileID: 1138212708}
   spawnPoint2: {fileID: 755548270}
-  radius: {x: 0, y: 0, z: 0}
-  colliders: []
-  wallAmount: 30
-  foodAmount: 10
+  wallAmount: 60
+  foodAmount: 50
 --- !u!1001 &417100339
 Prefab:
   m_ObjectHideFlags: 0
@@ -1491,7 +1489,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 529425099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -31.69, z: 143}
+  m_LocalPosition: {x: 0.6, y: -40, z: 143}
   m_LocalScale: {x: 3.8787107, y: 1, z: 11.80876}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1922,7 +1920,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 627933582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36, y: -31.69, z: 69.7}
+  m_LocalPosition: {x: -36, y: -40, z: 69.7}
   m_LocalScale: {x: 3.8787107, y: 1, z: 11.80876}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2185,7 +2183,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 846980788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.2, y: -31.69, z: 25.2}
+  m_LocalPosition: {x: 29.2, y: -40, z: 25.2}
   m_LocalScale: {x: 3.8787107, y: 1, z: 11.80876}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2811,7 +2809,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1070613265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.2, y: -31.69, z: 69.7}
+  m_LocalPosition: {x: 31.2, y: -40, z: 69.7}
   m_LocalScale: {x: 3.8787107, y: 1, z: 11.80876}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4031,6 +4029,7 @@ GameObject:
   - component: {fileID: 1637036841}
   - component: {fileID: 1637036840}
   - component: {fileID: 1637036844}
+  - component: {fileID: 1637036845}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Wall
@@ -4117,6 +4116,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1637036845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637036839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a389bf7741ab82448b8b23a84d4a594c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnedObject: {fileID: 1637036839}
+  radius: {x: 0, y: 0, z: 0}
+  colliders: []
 --- !u!1001 &1641644152
 Prefab:
   m_ObjectHideFlags: 0
@@ -4251,6 +4264,7 @@ GameObject:
   - component: {fileID: 1651682113}
   - component: {fileID: 1651682112}
   - component: {fileID: 1651682111}
+  - component: {fileID: 1651682116}
   m_Layer: 0
   m_Name: Food (1)
   m_TagString: Food
@@ -4351,6 +4365,20 @@ Transform:
   m_Father: {fileID: 1592731122}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1651682116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1651682110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396e79b22be67f3458c0bfb24ac456d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnedObject: {fileID: 1651682110}
+  radius: {x: 0, y: 0, z: 0}
+  colliders: []
 --- !u!1001 &1653871828
 Prefab:
   m_ObjectHideFlags: 0
