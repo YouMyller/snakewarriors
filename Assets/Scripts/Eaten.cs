@@ -5,7 +5,6 @@ using UnityEngine;
 public class Eaten : MonoBehaviour {
 
     private SnakeTest st;
-    public Randomizer random;
 
 	// Use this for initialization
 	void Start ()

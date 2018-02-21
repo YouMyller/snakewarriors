@@ -51,7 +51,6 @@ public class Randomizer : MonoBehaviour {
             number = Random.Range(0, powerupTable.Length);
             powerup = powerupTable[number];
             powerupList[number].enabled = true;
-            print(powerup);
             newpower = false;
         }
 
@@ -190,7 +189,6 @@ public class Randomizer : MonoBehaviour {
         for (int i = powerupList.Length-1; i >= 0; i--)
         {
             powerupList[i].enabled = false;
-            print(powerupList[i]);
         }
     }
 
