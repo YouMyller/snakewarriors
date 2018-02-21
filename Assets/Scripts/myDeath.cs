@@ -24,9 +24,14 @@ public class myDeath : MonoBehaviour {
 
     private Color myColor;
 
-    /*public Transform p1;
-    public Transform p2;
-    public Transform thisBodyPart;*/
+    private float startSize = 1;
+    private float minSize = 0;
+    public float currScale;
+
+    private Vector3 targetScale;
+    private Vector3 baseScale;
+
+    public float shrinkSpeed = 1;
 
     // Use this for initialization
     void Start ()
@@ -39,6 +44,11 @@ public class myDeath : MonoBehaviour {
         {
             myColor = snakeTestp2.newColor;
         }
+
+        baseScale = transform.localScale;
+        transform.localScale = baseScale * startSize;
+        currScale = startSize;
+        targetScale = baseScale * startSize;
     }
 	
 	// Update is called once per frame
@@ -59,35 +69,40 @@ public class myDeath : MonoBehaviour {
 
             if (destWait <= 0)
             {
-                /*if (transform.parent.tag == "P1" && eaten == false && snakeTestp1.points > 0)
-                {
-                    snakeTestp1.points -= 1;
-                    eaten = true;
-                    snakeTestp2.SetScoreText();
-                }
-                if (transform.parent.tag == "P2" && eaten == false && snakeTestp2.points > 0)
-                {
-                    snakeTestp2.points -= 1;
-                    eaten = true;
-                    snakeTestp1.SetScoreText();
-                }*/
-
                 //Ennen kuin objekti kuolee / kun koskettaa päätä, antaa päälle muistiin oman materiaalin värinsä. Seuraava objekti, jonka pää luo, on tämän värinen.
 
                 if (transform.parent.tag == "P1" && kill == true)
                 {
+                    Debug.Log("Beginning of the end, MY END");
                     snakeTestp2.AddBodyPart();
                     //snakeTestp2.points += 1;
                     snakeTestp2.SetScoreText();
                     snakeTestp2.newColor = myColor;
+
+                    Debug.Log("Got through that part!");
+                    transform.localScale = Vector3.Lerp(transform.localScale, targetScale, shrinkSpeed * Time.deltaTime);
+                    currScale--;
+                    Debug.Log(currScale);
+                    currScale = Mathf.Clamp(currScale, minSize, startSize + 1);
+                    targetScale = baseScale * currScale;
                 }
                 if (transform.parent.tag == "P2" && kill == true)
                 {
                     snakeTestp1.AddBodyPart();
                     snakeTestp1.SetScoreText();
                     snakeTestp1.newColor = myColor;
+
+                    transform.localScale = Vector3.Lerp(transform.localScale, targetScale, shrinkSpeed * Time.deltaTime);
+                    currScale -= .01f;
+                    currScale = Mathf.Clamp(currScale, minSize, startSize + 1);
+                    targetScale = baseScale * currScale;
                 }
-               Destroy(gameObject);
+
+                if (currScale <= 0)  //Or something like this
+                {
+                    Debug.Log("AUUGH I'M DYING, GOOD");
+                    Destroy(gameObject);
+                }
             }
         }
 	}
@@ -99,15 +114,17 @@ public class myDeath : MonoBehaviour {
 
         distanceP2 = Vector3.Distance(p2.transform.position, thisBodyPart.transform.position);
 
-        if (testBoolean == true)
+        /*if (testBoolean == true)
         {
             Debug.Log(distanceP2);
-        }
+        }*/
 
         GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+
         foreach (GameObject target in bullets)
         {
             float distanceB = Vector3.Distance(target.transform.position, transform.position);
+
             if(distanceB < 1)
             {
                 gameObject.tag = "Null";
@@ -119,11 +136,8 @@ public class myDeath : MonoBehaviour {
         {
             if (distanceP1 <= 1 && p1.tag == "P1")
             {
-                //myColor = gameObject.GetComponent<Renderer>().material.color;
-                //Debug.Log("Player 2: " + myColor);
                 gameObject.tag = "Null";
                 kill = true;
-                //Debug.Log("Erikoiskosketus. (Ykkönen söi)");
             }
         }
 
@@ -131,189 +145,9 @@ public class myDeath : MonoBehaviour {
         {
             if (distanceP2 <= 1 && p2.tag == "P2")
             {
-                //myColor = gameObject.GetComponent<Renderer>().material.color;
-                //Debug.Log("Player 1: " + myColor);
                 gameObject.tag = "Null";
                 kill = true;
-                //Debug.Log("Erikoiskosketus. (Kakkonen söi)");
             }
         }
     }
-
-    //THIS ONE IS FOR THE BODY PARTS
-    /*
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (transform.parent.tag == "P1")
-        {
-            if (collision.gameObject.CompareTag("P2"))
-            {
-                Debug.Log("P1 koskettaa P2 (Collision Enter)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-
-        if (transform.parent.tag == "P2")
-        {
-            if (collision.gameObject.CompareTag("P1"))
-            {
-                Debug.Log("P2 koskettaa P1 (Collision Enter)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-    }
-
-    public void OnCollisionStay(Collision collision)
-    {
-        if (transform.parent.tag == "P1")
-        {
-            if (collision.gameObject.CompareTag("P2"))
-            {
-                Debug.Log("P1 koskettaa P2 (Collision Stay)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-
-        if (transform.parent.tag == "P2")
-        {
-            if (collision.gameObject.CompareTag("P1"))
-            {
-                Debug.Log("P2 koskettaa P1 (Collision Stay)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-    }
-
-    public void OnCollisionExit(Collision collision)
-    {
-        if (transform.parent.tag == "P1")
-        {
-            if (collision.gameObject.CompareTag("P2"))
-            {
-                Debug.Log("P1 koskettaa P2 (Collision Exit)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-        if (transform.parent.tag == "P2")
-        {
-            if (collision.gameObject.CompareTag("P1"))
-            {
-                Debug.Log("P2 koskettaa P1 (Collision Exit)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-    }
-
-    public void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            gameObject.tag = "Null";
-        }
-
-        if (transform.parent.tag == "P1")
-        {
-            if (collision.gameObject.CompareTag("P2"))
-            {
-                Debug.Log("P1 koskettaa P2 (Trigger Enter)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";                }
-            }
-        }
-
-        if (transform.parent.tag == "P2")
-        {
-            if (collision.gameObject.CompareTag("P1"))
-            {
-                Debug.Log("P2 koskettaa P1 (Trigger Enter)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-    }
-
-    public void OnTriggerExit(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            gameObject.tag = "Null";
-        }
-
-        if (transform.parent.tag == "P1")
-        {
-            if (collision.gameObject.CompareTag("P2"))
-            {
-                Debug.Log("P1 koskettaa P2 (Trigger Exit)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-
-        if (transform.parent.tag == "P2")
-        {
-            if (collision.gameObject.CompareTag("P1"))
-            {
-                Debug.Log("P2 koskettaa P1 (Trigger Exit)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-    }
-
-    public void OnTriggerStay(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            gameObject.tag = "Null";
-        }
-
-        if (transform.parent.tag == "P1")
-        {
-            if (collision.gameObject.CompareTag("P2"))
-            {
-                Debug.Log("P1 koskettaa P2 (Trigger Stay)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-
-        if (transform.parent.tag == "P2")
-        {
-            if (collision.gameObject.CompareTag("P1"))
-            {
-                Debug.Log("P2 koskettaa P1 (Trigger Stay)");
-                if (creationWait <= 0)
-                {
-                    gameObject.tag = "Null";
-                }
-            }
-        }
-    }*/
 }
