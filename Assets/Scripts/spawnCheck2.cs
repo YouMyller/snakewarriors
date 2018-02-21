@@ -8,6 +8,10 @@ public class spawnCheck2 : MonoBehaviour
     public GameObject spawnedObject;
     public Vector3 radius;
     public Collider[] colliders;
+    public float randomXa;
+    public float randomXb;
+    public float randomYa;
+    public float randomYb;
 
     // Use this for initialization
     void Start()
@@ -32,9 +36,9 @@ public class spawnCheck2 : MonoBehaviour
         while (canSpawnHere == false)
         {
 
-            float spawnPosX = Random.Range(-43.5f, 45.5f);
-            float spawnPosY = Random.Range(-30.5f, 120.5f);
-            spawnPos = new Vector3(spawnPosX, -31, spawnPosY);
+            float spawnPosX = Random.Range(randomXa, randomXb);
+            float spawnPosY = Random.Range(randomYa, randomYb);
+            spawnPos = new Vector3(spawnPosX, -31.2f, spawnPosY);
             canSpawnHere = preventSpawnOverlap(spawnPos);
             spawnedObject.transform.position = spawnPos;
             safetynet++;
@@ -61,12 +65,12 @@ public class spawnCheck2 : MonoBehaviour
         {
             Vector3 centerPoint = colliders[i].bounds.center;
             float width = colliders[i].bounds.extents.x;
-            float height = colliders[i].bounds.extents.z;
+            float height = colliders[i].bounds.extents.y;
 
             float leftextent = centerPoint.x - width;
             float rightextent = centerPoint.x + width;
-            float upperextent = centerPoint.z + height;
-            float lowerextent = centerPoint.z - height;
+            float upperextent = centerPoint.y + height;
+            float lowerextent = centerPoint.y - height;
 
 
         }

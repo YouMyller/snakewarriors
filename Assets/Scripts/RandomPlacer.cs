@@ -10,8 +10,11 @@ public class RandomPlacer : MonoBehaviour {
     public GameObject spawnPoint2;
     public int wallAmount;
     public int foodAmount;
-    
 
+    public float randomXa;
+    public float randomXb;
+    public float randomYa;
+    public float randomYb;
 
     // Use this for initialization
     void Start ()
@@ -22,23 +25,16 @@ public class RandomPlacer : MonoBehaviour {
         
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-        
-            
-}
-
     void createWalls()
     {
         for (int i = 0; i < wallAmount; i++)
         {
-            Vector3 spawnPos = new Vector3(0, -31, 0);
-            wall.transform.localScale = new Vector3(Random.Range(3, 10), 1, Random.Range(3, 10));
+            Vector3 spawnPos = new Vector3(0, -31.2f, 0);
+            wall.transform.localScale = new Vector3(Random.Range(.1f, 1), Random.Range(.1f, 1), 1);
 
-                float spawnPosX = Random.Range(-43.5f, 45.5f);
-                float spawnPosY = Random.Range(-30.5f, 120.5f);
-                spawnPos = new Vector3(spawnPosX, -31, spawnPosY);
+                float spawnPosX = Random.Range(randomXa, randomXb);
+                float spawnPosY = Random.Range(randomYa, randomYb);
+                spawnPos = new Vector3(spawnPosX, -31.2f, spawnPosY);
                 GameObject seina = Instantiate(wall, spawnPos, Quaternion.AngleAxis (90, Vector3.left)) as GameObject;
             
         }
@@ -48,19 +44,19 @@ public class RandomPlacer : MonoBehaviour {
         {
         for (int i = 0; i < foodAmount; i++)
         {
-            Vector3 spawnPos = new Vector3(0, -31, 0);
-                float spawnPosX = Random.Range(-43.5f, 45.5f);
-                float spawnPosY = Random.Range(-30.5f, 120.5f);
-                spawnPos = new Vector3(spawnPosX, -31, spawnPosY);
+            Vector3 spawnPos = new Vector3(0, -31.2f, 0);
+            float spawnPosX = Random.Range(randomXa, randomXb);
+            float spawnPosY = Random.Range(randomYa, randomYb);
+            spawnPos = new Vector3(spawnPosX, -31.2f, spawnPosY);
             GameObject ruoka = Instantiate(food, spawnPos, Quaternion.AngleAxis(90, Vector3.left)) as GameObject;
         }
     }
     void playerSpawn()
     {
-        Vector3 spawnPos = new Vector3(0, -31, 0);
-            float spawnPosX = Random.Range(-43.5f, 45.5f);
-            float spawnPosY = Random.Range(-30.5f, 120.5f);
-            spawnPos = new Vector3(spawnPosX, -31, spawnPosY);
+        Vector3 spawnPos = new Vector3(0, -31.2f, 0);
+        float spawnPosX = Random.Range(randomXa, randomXb);
+        float spawnPosY = Random.Range(randomYa, randomYb);
+        spawnPos = new Vector3(spawnPosX, -31.2f, spawnPosY);
         spawnPoint.transform.position = spawnPos;
         spawnPoint2.transform.position = spawnPos;
 

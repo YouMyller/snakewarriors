@@ -360,8 +360,6 @@ public class SnakeTest : MonoBehaviour {
         Color partColor = newPart.GetComponent<Renderer>().material.color;
         partColor = newColor; 
 
-        Debug.Log(newColor);
-
         bodyParts.Add(newPart);
 
         if (creationTimer <= 0)

@@ -37,8 +37,6 @@ public class Randomizer : MonoBehaviour {
         powerup = "Null";
         ResetImages();
         powerupList[8].enabled = true;
-
-        
     }
 	
 	// Update is called once per frame
@@ -51,6 +49,7 @@ public class Randomizer : MonoBehaviour {
             number = Random.Range(0, powerupTable.Length);
             powerup = powerupTable[number];
             powerupList[number].enabled = true;
+            powerupList[8].enabled = false;
             newpower = false;
         }
 

@@ -137,8 +137,9 @@ public class HeadCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Wall" )
+        if (collision.gameObject.tag == "Wall")
         {
+            Debug.Log("kAKKA");
             transform.position = spawnPosition.transform.position;
             if (bodyPartsNew.Count !=1)
             {
