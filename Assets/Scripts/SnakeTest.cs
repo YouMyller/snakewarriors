@@ -52,6 +52,19 @@ public class SnakeTest : MonoBehaviour {
 
     public Color newColor;
 
+    public Sprite spriteUp;
+    public Sprite spriteDown;
+    public Sprite spriteRight;
+    public Sprite spriteLeft;
+
+    public Sprite eyesUp;
+    public Sprite eyesDown;
+    public Sprite eyesRight;
+    public Sprite eyesLeft;
+
+    public SpriteRenderer headSpriteRenderer;
+    public SpriteRenderer eyeSpriteRenderer;
+
     // Use this for initialization
     void Start ()
     {
@@ -188,37 +201,53 @@ public class SnakeTest : MonoBehaviour {
             if (Input.GetKey(KeyCode.W) && move != 2 && random.reverse == false)
             {
                 move = 0;
+                headSpriteRenderer.sprite = spriteUp;
+                eyeSpriteRenderer.sprite = eyesUp;
             }
             else if (Input.GetKey(KeyCode.W) && move != 0 && random.reverse == true)
             {
                 move = 2;
+                headSpriteRenderer.sprite = spriteDown;
+                eyeSpriteRenderer.sprite = eyesDown;
             }
 
             else if (Input.GetKey(KeyCode.D) && move != 3 && random.reverse == false)
             {
                 move = 1;
+                headSpriteRenderer.sprite = spriteRight;
+                eyeSpriteRenderer.sprite = eyesRight;
             }
             else if (Input.GetKey(KeyCode.D) && move != 1 && random.reverse == true)
             {
                 move = 3;
+                headSpriteRenderer.sprite = spriteLeft;
+                eyeSpriteRenderer.sprite = eyesLeft;
             }
 
             else if (Input.GetKey(KeyCode.S) && move != 0 && random.reverse == false)
             {
                 move = 2;
+                headSpriteRenderer.sprite = spriteDown;
+                eyeSpriteRenderer.sprite = eyesDown;
             }
             else if (Input.GetKey(KeyCode.S) && move != 2 && random.reverse == true)
             {
                 move = 0;
+                headSpriteRenderer.sprite = spriteUp;
+                eyeSpriteRenderer.sprite = eyesUp;
             }
 
             else if (Input.GetKey(KeyCode.A) && move != 1 && random.reverse == false)
             {
                 move = 3;
+                headSpriteRenderer.sprite = spriteLeft;
+                eyeSpriteRenderer.sprite = eyesLeft;
             }
             else if (Input.GetKey(KeyCode.A) && move != 3 && random.reverse == true)
             {
                 move = 1;
+                headSpriteRenderer.sprite = spriteRight;
+                eyeSpriteRenderer.sprite = eyesRight;
             }
 
 
@@ -243,37 +272,54 @@ public class SnakeTest : MonoBehaviour {
             if (Input.GetKey(KeyCode.UpArrow) && move != 2 && random.reverse == false)
             {
                 move = 0;
+                headSpriteRenderer.sprite = spriteUp;
+                eyeSpriteRenderer.sprite = eyesUp;
             }
             else if (Input.GetKey(KeyCode.UpArrow) && move != 0 && random.reverse == true)
             {
                 move = 2;
+                headSpriteRenderer.sprite = spriteDown;
+                eyeSpriteRenderer.sprite = eyesDown
+                    ;
             }
 
             else if (Input.GetKey(KeyCode.RightArrow) && move != 3 && random.reverse == false)
             {
                 move = 1;
+                headSpriteRenderer.sprite = spriteRight;
+                eyeSpriteRenderer.sprite = eyesRight;
             }
             else if (Input.GetKey(KeyCode.RightArrow) && move != 1 && random.reverse == true)
             {
                 move = 3;
+                headSpriteRenderer.sprite = spriteLeft;
+                eyeSpriteRenderer.sprite = eyesLeft;
             }
 
             else if (Input.GetKey(KeyCode.DownArrow) && move != 0 && random.reverse == false)
             {
                 move = 2;
+                headSpriteRenderer.sprite = spriteDown;
+                eyeSpriteRenderer.sprite = eyesDown;
             }
             else if (Input.GetKey(KeyCode.DownArrow) && move != 2 && random.reverse == true)
             {
                 move = 0;
+                headSpriteRenderer.sprite = spriteUp;
+                eyeSpriteRenderer.sprite = eyesUp;
             }
 
             else if (Input.GetKey(KeyCode.LeftArrow) && move != 1 && random.reverse == false)
             {
                 move = 3;
+                headSpriteRenderer.sprite = spriteLeft;
+                eyeSpriteRenderer.sprite = eyesLeft;
             }
             else if (Input.GetKey(KeyCode.LeftArrow) && move != 3 && random.reverse == true)
             {
                 move = 1;
+                headSpriteRenderer.sprite = spriteRight;
+                eyeSpriteRenderer.sprite = eyesRight;
             }
 
 
