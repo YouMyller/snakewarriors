@@ -6,11 +6,13 @@ public class RandomPlacer : MonoBehaviour {
 
     public GameObject wall;
     public GameObject food;
+    public GameObject superFood;
     public GameObject powerUp;
     public GameObject spawnPoint;
     public GameObject spawnPoint2;
     public int wallAmount;
     public int foodAmount;
+    public int superFoodAmount;
     public int powerAmount;
     public float randomXa;
     public float randomXb;
@@ -24,6 +26,7 @@ public class RandomPlacer : MonoBehaviour {
         createFood();
         playerSpawn();
         createPower();
+        createSuperFood();
         
     }
 	
@@ -51,6 +54,17 @@ public class RandomPlacer : MonoBehaviour {
             float spawnPosY = Random.Range(randomYa, randomYb);
             spawnPos = new Vector3(spawnPosX, -31.2f, spawnPosY);
             GameObject ruoka = Instantiate(food, spawnPos, Quaternion.AngleAxis(90, Vector3.left)) as GameObject;
+        }
+    }
+    void createSuperFood()
+    {
+        for (int i = 0; i < superFoodAmount; i++)
+        {
+            Vector3 spawnPos = new Vector3(0, -31, 0);
+            float spawnPosX = Random.Range(randomXa, randomXb);
+            float spawnPosY = Random.Range(randomYa, randomYb);
+            spawnPos = new Vector3(spawnPosX, -31.2f, spawnPosY);
+            GameObject superRuoka = Instantiate(superFood, spawnPos, Quaternion.AngleAxis(90, Vector3.left)) as GameObject;
         }
     }
     void playerSpawn()

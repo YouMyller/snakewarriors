@@ -27,6 +27,7 @@ public class Randomizer : MonoBehaviour {
     public bool timerRunning = false;
     public bool badfood = false;
     public bool reverse = false;
+    public bool speeded = false;
 
     public AudioSource soundi;
     public AudioClip shield;
@@ -88,11 +89,11 @@ public class Randomizer : MonoBehaviour {
                 timerRunning = false;
                 reverse = false;
                 badfood = false;
-                powerup = ("Null");
                 ResetImages();
                 powerupList[8].enabled = true;
                 shielding = false;
                 otherst.stunned = false;
+                speeded = false;
             }
         }
 
@@ -101,19 +102,21 @@ public class Randomizer : MonoBehaviour {
     {
         if (powerup == "Speed")
         {
+            powerup = ("Null");
             soundi.PlayOneShot(speed);
             st.speed = 16;
             timer = 5;
             timerRunning = true;
+            speeded = true;
         }
         else if (powerup == "Swap")
         {
+            powerup = ("Null");
             soundi.PlayOneShot(tp);
             temp = ThisHead.transform.position;
             ThisHead.transform.position = OtherHead.transform.position;
             print(temp);
             OtherHead.transform.position = temp;
-            powerup = "Null";
             ResetImages();
             powerupList[8].enabled = true;
         }
@@ -144,6 +147,7 @@ public class Randomizer : MonoBehaviour {
 
         else if (powerup == "Stun")
         {
+            powerup = ("Null");
             soundi.PlayOneShot(stun);
             otherst.stunned = true;
             timer = 3;
@@ -151,6 +155,7 @@ public class Randomizer : MonoBehaviour {
         }
         else if (powerup == "Badfood")
         {
+            powerup = ("Null");
             soundi.PlayOneShot(bad);
             badfood = true;
             timer = 5;
@@ -158,6 +163,7 @@ public class Randomizer : MonoBehaviour {
         }
         else if (powerup == "Shield")
         {
+            powerup = ("Null");
             soundi.PlayOneShot(shield);
             shielding = true;
             timer = 5;
@@ -165,6 +171,7 @@ public class Randomizer : MonoBehaviour {
         }
         else if (powerup == "Reverse")
         {
+            powerup = ("Null");
             soundi.PlayOneShot(invert);
             reverse = true;
             timer = 5;

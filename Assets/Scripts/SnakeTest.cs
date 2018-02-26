@@ -160,7 +160,7 @@ public class SnakeTest : MonoBehaviour {
     {
         staminaBar.value = energy;
 
-        if (stunned == false && random.powerup != "Speed")
+        if (stunned == false && random.speeded == false)
         {
             speed = 8;
             if (sprinting == false)

@@ -41,6 +41,7 @@ public class spawnCheck2 : MonoBehaviour
             spawnPos = new Vector3(spawnPosX, -31f, spawnPosY);
             canSpawnHere = preventSpawnOverlap(spawnPos);
             spawnedObject.transform.position = spawnPos;
+
             safetynet++;
             if (safetynet > 500)
             {
