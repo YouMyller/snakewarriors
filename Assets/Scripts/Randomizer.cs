@@ -28,6 +28,15 @@ public class Randomizer : MonoBehaviour {
     public bool badfood = false;
     public bool reverse = false;
 
+    public AudioSource soundi;
+    public AudioClip shield;
+    public AudioClip speed;
+    public AudioClip mineDeploy;
+    public AudioClip bad;
+    public AudioClip stun;
+    public AudioClip invert;
+    public AudioClip tp;
+
     Random r = new Random();
 
 	// Use this for initialization
@@ -92,12 +101,14 @@ public class Randomizer : MonoBehaviour {
     {
         if (powerup == "Speed")
         {
+            soundi.PlayOneShot(speed);
             st.speed = 16;
             timer = 5;
             timerRunning = true;
         }
         else if (powerup == "Swap")
         {
+            soundi.PlayOneShot(tp);
             temp = ThisHead.transform.position;
             ThisHead.transform.position = OtherHead.transform.position;
             print(temp);
@@ -109,6 +120,7 @@ public class Randomizer : MonoBehaviour {
 
         else if (powerup == "Mine")
         {
+            soundi.PlayOneShot(mineDeploy);
             if (st.move == 2)
             {
                 Instantiate(Mine, ThisHead.transform.position + ThisHead.transform.up * bodylist.Count*1.3f, ThisHead.transform.rotation);
@@ -132,24 +144,28 @@ public class Randomizer : MonoBehaviour {
 
         else if (powerup == "Stun")
         {
+            soundi.PlayOneShot(stun);
             otherst.stunned = true;
             timer = 3;
             timerRunning = true;
         }
         else if (powerup == "Badfood")
         {
+            soundi.PlayOneShot(bad);
             badfood = true;
             timer = 5;
             timerRunning = true;
         }
         else if (powerup == "Shield")
         {
+            soundi.PlayOneShot(shield);
             shielding = true;
             timer = 5;
             timerRunning = true;
         }
         else if (powerup == "Reverse")
         {
+            soundi.PlayOneShot(invert);
             reverse = true;
             timer = 5;
             timerRunning = true;

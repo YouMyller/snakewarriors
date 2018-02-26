@@ -18,6 +18,12 @@ public class eatingFood : MonoBehaviour {
     public GameObject end1;
     public GameObject end2;
 
+    public AudioClip food;
+    public AudioClip mine;
+    public AudioClip power;
+
+    public AudioSource soundi;
+
     // Use this for initialization
     void Start ()
     {
@@ -34,6 +40,7 @@ public class eatingFood : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Food"))
         {
+            soundi.PlayOneShot(food);
             if (random.badfood == false)
             {
                 st.growTwo = true;
@@ -49,6 +56,7 @@ public class eatingFood : MonoBehaviour {
 
         if (collision.gameObject.CompareTag("Mine"))
         {
+            soundi.PlayOneShot(mine);
             if (bodylist.Count == 2)
             {
                 bodylist[bodylist.Count - 1].tag = "Null";
@@ -68,6 +76,7 @@ public class eatingFood : MonoBehaviour {
 
         if (collision.gameObject.CompareTag("SuperFood"))
         {
+            soundi.PlayOneShot(food);
             if (random.badfood == false)
             {
                 st.growFive = true;
@@ -85,6 +94,7 @@ public class eatingFood : MonoBehaviour {
 
         if (collision.gameObject.tag == "Powerup")
         {
+            soundi.PlayOneShot(power);
             if (random.powerup == "Null")
             {
                 random.newpower = true;
