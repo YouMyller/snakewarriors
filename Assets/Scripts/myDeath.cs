@@ -31,7 +31,7 @@ public class myDeath : MonoBehaviour {
     private Vector3 targetScale;
     private Vector3 baseScale;
 
-    public float shrinkSpeed = 1;
+    public float shrinkSpeed = .1f;
 
     // Use this for initialization
     void Start ()
@@ -62,29 +62,24 @@ public class myDeath : MonoBehaviour {
         {
             destWait -= Time.deltaTime;
 
-            if (destWait < 0)
-            {
-                destWait -= Time.deltaTime;
-            }
-
             if (destWait <= 0)
             {
                 //Ennen kuin objekti kuolee / kun koskettaa päätä, antaa päälle muistiin oman materiaalin värinsä. Seuraava objekti, jonka pää luo, on tämän värinen.
+                kill = true;    //WATCH OUT, tää saattaa rikkoa jotain
 
                 if (transform.parent.tag == "P1" && kill == true)
                 {
                     Debug.Log("Beginning of the end, MY END");
-                    snakeTestp2.AddBodyPart();
-                    //snakeTestp2.points += 1;
+                    snakeTestp2.AddBodyPart();  
                     snakeTestp2.SetScoreText();
                     snakeTestp2.newColor = myColor;
 
-                    Debug.Log("Got through that part!");
+                    /*Debug.Log("Got through that part!");
                     transform.localScale = Vector3.Lerp(transform.localScale, targetScale, shrinkSpeed * Time.deltaTime);
                     currScale--;
                     Debug.Log(currScale);
                     currScale = Mathf.Clamp(currScale, minSize, startSize + 1);
-                    targetScale = baseScale * currScale;
+                    targetScale = baseScale * currScale;*/
                 }
                 if (transform.parent.tag == "P2" && kill == true)
                 {
@@ -92,17 +87,13 @@ public class myDeath : MonoBehaviour {
                     snakeTestp1.SetScoreText();
                     snakeTestp1.newColor = myColor;
 
-                    transform.localScale = Vector3.Lerp(transform.localScale, targetScale, shrinkSpeed * Time.deltaTime);
+                    /*transform.localScale = Vector3.Lerp(transform.localScale, targetScale, shrinkSpeed * Time.deltaTime);
                     currScale -= .01f;
                     currScale = Mathf.Clamp(currScale, minSize, startSize + 1);
-                    targetScale = baseScale * currScale;
+                    targetScale = baseScale * currScale;*/
                 }
-
-                if (currScale <= 0)  //Or something like this
-                {
-                    Debug.Log("AUUGH I'M DYING, GOOD");
-                    Destroy(gameObject);
-                }
+                Debug.Log("AUUGH I'M DYING, GOOD");
+                Destroy(gameObject);
             }
         }
 	}

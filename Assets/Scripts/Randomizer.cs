@@ -58,7 +58,7 @@ public class Randomizer : MonoBehaviour {
             for (int i = bodylist.Count - 1; i > 0; i--)
             {
                 GameObject shielded = bodylist[i];
-                shielded.GetComponent<myDeath>().enabled = false;
+                shielded.GetComponent<myDeath>().enabled = false;   //Peli ei tykkää tästä kohdasta. Heittää herjaa
                 bodylist[i].gameObject.GetComponent<Renderer>().material.color = Color.cyan;
             }
         }
@@ -67,7 +67,7 @@ public class Randomizer : MonoBehaviour {
             for (int i = bodylist.Count - 1; i > 0; i--)
             {
                 GameObject shielded = bodylist[i];
-                shielded.GetComponent<myDeath>().enabled = true;
+                shielded.GetComponent<myDeath>().enabled = true;    //Peli ei tykkää tästä kohdasta. Heittää herjaa
                 bodylist[i].gameObject.GetComponent<Renderer>().material.color = Color.white;
             }
         }

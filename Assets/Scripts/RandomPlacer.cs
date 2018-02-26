@@ -30,12 +30,12 @@ public class RandomPlacer : MonoBehaviour {
         for (int i = 0; i < wallAmount; i++)
         {
             Vector3 spawnPos = new Vector3(0, -31.2f, 0);
-            wall.transform.localScale = new Vector3(Random.Range(.1f, 1), Random.Range(.1f, 1), 1);
+            wall.transform.localScale = new Vector3(Random.Range(3, 20), 1, Random.Range(3, 20));
 
                 float spawnPosX = Random.Range(randomXa, randomXb);
                 float spawnPosY = Random.Range(randomYa, randomYb);
                 spawnPos = new Vector3(spawnPosX, -31.2f, spawnPosY);
-                GameObject seina = Instantiate(wall, spawnPos, Quaternion.AngleAxis (90, Vector3.left)) as GameObject;
+                GameObject seina = Instantiate(wall, spawnPos, Quaternion.identity) as GameObject;
             
         }
     }

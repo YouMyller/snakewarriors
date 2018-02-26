@@ -33,14 +33,15 @@ public class spawnCheck : MonoBehaviour {
 
             while (canSpawnHere == false)
             {
-            spawnedObject.transform.localScale = new Vector3(Random.Range(0.1f, 1), Random.Range(0.1f, 1), 3);
+            spawnedObject.transform.localScale = new Vector3(Random.Range(3, 20), 1, Random.Range(3, 20));
             float spawnPosX = Random.Range(randomXa, randomXb);
                 float spawnPosY = Random.Range(randomYa, randomYb);
                 spawnPos = new Vector3(spawnPosX, -31.2f, spawnPosY);
-                canSpawnHere = preventSpawnOverlap(spawnPos);
             spawnedObject.transform.position = spawnPos;
+            canSpawnHere = preventSpawnOverlap(spawnPos);
+
             safetynet ++;
-            if (safetynet > 500)
+            if (safetynet > 1000)
             {
                 Debug.Log("too many attempts");
                 break;

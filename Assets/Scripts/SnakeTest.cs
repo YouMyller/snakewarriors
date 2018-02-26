@@ -352,10 +352,8 @@ public class SnakeTest : MonoBehaviour {
     public void AddBodyPart()
     {
         GameObject newPart = Instantiate(bodyPrefab, bodyParts[bodyParts.Count - 1].transform.position, bodyParts[bodyParts.Count - 1].transform.rotation);
-        //Transform newPart = (Instantiate(bodyPrefab, bodyParts[bodyParts.Count - 1].position, bodyParts[bodyParts.Count - 1].rotation) as GameObject).transform;
 
         newPart.transform.SetParent(transform);
-        //newPart.SetParent(transform);
 
         Color partColor = newPart.GetComponent<Renderer>().material.color;
         partColor = newColor; 
@@ -363,10 +361,10 @@ public class SnakeTest : MonoBehaviour {
         bodyParts.Add(newPart);
 
         if (creationTimer <= 0)
-        //if (bodyParts.Count >= 7)
         {
             points += 1;
             SetScoreText();
+            Debug.Log("Oh my, the points. We're stuck.");
         }
     }
 
