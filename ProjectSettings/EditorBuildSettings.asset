@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/scene_1.unity
     guid: 69140aa30bc8d8743872305e6de01fe2
+  - enabled: 1
+    path: Assets/Scenes/Titles.unity
+    guid: 54a56255c53ba9d43bcba2fbee29737a
+  - enabled: 1
+    path: Assets/Scenes/RealChoosePlayer.unity
+    guid: 3dc2a5d7a50453a4990244d18bed4c33
   - enabled: 1
     path: Assets/Scenes/ChoosePlayer.unity
     guid: 203c8a20d369fd9439ed5f9c94bc2b40
@@ -20,9 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThreePlayers.unity
     guid: 42b74492fd323de4f83230ab526c0b54
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TwoPlayers.unity
     guid: 814302cc80395a04f887b7bc010651ec
   - enabled: 1
-    path: Assets/Scenes/RealChoosePlayer.unity
-    guid: 3dc2a5d7a50453a4990244d18bed4c33
+    path: Assets/Scenes/scene_2.unity
+    guid: 8fe1b7f0ebfebd643a173967146f2b99

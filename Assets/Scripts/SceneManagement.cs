@@ -40,7 +40,8 @@ public class SceneManagement : MonoBehaviour {
 
         else if (name == "2 players")
         {
-            SceneManager.LoadScene("TwoPlayers");
+            //SceneManager.LoadScene("TwoPlayers");
+            SceneManager.LoadScene("scene_2");
         }
 
         else if (name == "3 players")
