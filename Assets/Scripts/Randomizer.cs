@@ -19,6 +19,7 @@ public class Randomizer : MonoBehaviour {
     string[] powerupTable = {"Speed", "Swap", "Stun", "Badfood", "Shield", "Reverse", "Mine", "Gun"};
     public string powerup;
     int number;
+    int bullets = 3;
     public float timer = 0;
     Vector3 temp;
     public bool newpower = false;
@@ -179,6 +180,7 @@ public class Randomizer : MonoBehaviour {
         }
         else if (powerup == "Gun")
         {
+
             var luoti = new GameObject();
             if (st.move == 0)
             {
@@ -201,9 +203,10 @@ public class Randomizer : MonoBehaviour {
                 luoti.SetActive(true);
             }
 
-            ResetImages();
-            powerupList[8].enabled = true;
-            powerup = "Null";
+                ResetImages();
+                powerupList[8].enabled = true;
+                powerup = "Null";
+
         }
     }
     void ResetImages()
